@@ -1347,6 +1347,14 @@ button:hover .shopping_bag {
     gap: 30px;
 }
 
+.skill_circle_main_langage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    gap: 80px;
+}
+
 .circle-chart {
     width: 150px;
     height: 150px;
