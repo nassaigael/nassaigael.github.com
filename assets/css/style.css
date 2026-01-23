@@ -61,7 +61,7 @@ a {
     --one-background: #141C27;
     --card-background: #09101A;
     --card-text: #FFF;
-    --card-sub-text: #A2A2A2;
+    --card-sub-text: #eedada;
     --button-color-hover: #FFF;
     --circle-img-border: #141C27;
     --circle-img-filter: brightness(0) saturate(100%) invert(69%) sepia(0%) saturate(0%) hue-rotate(74deg) brightness(94%) contrast(93%);
@@ -1048,7 +1048,7 @@ button:hover {
     position: relative;
     transform: translateX(-22px);
     overflow: hidden;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.751), rgba(0, 0, 0, 0.501)), url('../images/autre.png');
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.698), rgba(0, 0, 0, 0.245)), url('../images/autre.png');
     background-position: center;
     background-size: cover;
     /* height: 620px; */
