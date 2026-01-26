@@ -34,7 +34,7 @@ setInterval(() => {
 var tabs = document.getElementById('icetab-container').children;
 var tabs2 = document.getElementById('icetab-container2').children;
 var tabcontents = document.getElementById('icetab-content').children;
- 
+
 var mybtn = function () {
     var tabchange = this.mynum;
     for (var int = 0; int < tabcontents.length; int++) {

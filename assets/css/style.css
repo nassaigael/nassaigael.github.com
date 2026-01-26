@@ -876,13 +876,19 @@ canvas {
     cursor: pointer;
 }
 
-.sidenav .logo {
+.sidenav #logo {
     position: absolute;
     top: 40px;
     left: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.sidenav span {
+    color: var(--one);
 }
 
 /*-----------------------[ 8.Fix Image CSS ]------------------------*/
@@ -1048,7 +1054,7 @@ button:hover {
     position: relative;
     transform: translateX(-22px);
     overflow: hidden;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.698), rgba(0, 0, 0, 0.245)), url('../images/autre.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.698), rgba(0, 0, 0, 0.245)), url('../images/autre.png');
     background-position: center;
     background-size: cover;
     /* height: 620px; */
