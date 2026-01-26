@@ -780,6 +780,41 @@ canvas {
     height: 20px;
 }
 
+.submit {
+    transition: all 0.3s ease;
+}
+
+.submit.success {
+    background-color: #55E6A5 !important;
+    color: white !important;
+    transform: scale(1.05);
+    animation: pulse 0.6s ease-in-out;
+}
+
+.submit.error {
+    background-color: #dc3545 !important;
+    color: white !important;
+    transform: scale(0.95);
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.submit.loading {
+    background-color: #A2A2A2 !important;
+    color: white !important;
+}
+
 .nav_menu_icon_line {
     border-bottom: 2px solid var(--primary-color);
 }
