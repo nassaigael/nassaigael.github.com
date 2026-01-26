@@ -56,34 +56,12 @@ a {
 }
 
 :root {
-    --primary-color: #F2F3F5;
-    --one: #02050A;
-    --one-background: #F2F3F5;
-    --card-background: #FFF;
-    --card-text: #02050A;
-    --card-sub-text: #545454;
-    --button-color-hover: #02050A;
-    --circle-img-border: #FFF;
-    --circle-img-filter: brightness(0) saturate(100%) invert(34%) sepia(0%) saturate(2216%) hue-rotate(304deg) brightness(90%) contrast(88%);
-    --menu-toggle-btn: #02050A;
-    --nav-menu-icon: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(4%) hue-rotate(261deg) brightness(99%) contrast(98%);
-    --background-blur: linear-gradient(95deg, rgba(255, 255, 255, 0.40) 0%, rgba(2, 5, 10, 0.20) 100%, rgba(255, 255, 255, 0.20) 100%);
-    --designer-text: #FFF;
-    --dev-icons: brightness(0) saturate(100%) invert(1%) sepia(0%) saturate(7497%) hue-rotate(68deg) brightness(97%) contrast(99%);
-    --uiux: #02050A;
-    --uiux-hover: brightness(0) saturate(100%) invert(100%) sepia(23%) saturate(5408%) hue-rotate(72deg) brightness(95%) contrast(89%);
-    --uiux-text-hover: #55E6A5;
-    --bag: brightness(0) saturate(100%) invert(2%) sepia(4%) saturate(7498%) hue-rotate(139deg) brightness(101%) contrast(99%);
-    --background-hover-card: rgba(0, 0, 0, 0.7);
-}
-
-.dark-mode {
     --primary-color: #02050A;
     --one: #55E6A5;
     --one-background: #141C27;
     --card-background: #09101A;
     --card-text: #FFF;
-    --card-sub-text: #A2A2A2;
+    --card-sub-text: #ffffffb7;
     --button-color-hover: #FFF;
     --circle-img-border: #141C27;
     --circle-img-filter: brightness(0) saturate(100%) invert(69%) sepia(0%) saturate(0%) hue-rotate(74deg) brightness(94%) contrast(93%);
