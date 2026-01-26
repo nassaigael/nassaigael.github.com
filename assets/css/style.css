@@ -646,11 +646,12 @@ canvas {
     z-index: 80;
 }
 
-.ul-header a {
-    font-size: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+.header-logo {
+    width: 150px;
+    height: auto;
 }
+
+
 
 .icon-container {
     position: relative;
