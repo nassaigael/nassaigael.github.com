@@ -673,6 +673,7 @@ canvas {
 
 /*-----------------------[ 6.Fix Icon Menu CSS ]------------------------*/
 .sidebar {
+    margin-top: 60px;
     width: 78px;
     background: var(--card-background);
     z-index: 50;
