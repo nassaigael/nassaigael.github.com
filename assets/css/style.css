@@ -771,6 +771,13 @@ canvas {
 
 .nav_menu_icon {
     filter: var(--nav-menu-icon);
+    width: 25px;
+    height: 25px;
+}
+
+.nav_menu_icon_contact {
+    width: 20px;
+    height: 20px;
 }
 
 .nav_menu_icon_line {
