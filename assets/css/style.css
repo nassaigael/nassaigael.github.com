@@ -1,34 +1,3 @@
-/*------------------------------------------------------------------
-  Project: Olivia
-  Author: Upsqode
-  Last change: 01/01/2024 
-  Primary use: Portfolio Theme with Yellow Color Scheme
------------------------------------------------------------------- */
-/*-----------------------[Table of contents]------------------------ 
-1.Default CSS 
-2.Preloader CSS
-3.Background Animation
-4.cursor CSS
-5.Dark Light Mode CSS
-6.Fix Icon Menu CSS
-7.Side Menu CSS
-8.Fix Image CSS
-9.Home Section CSS
-10.About Us Section CSS
-11.Resume Section CSS
-12.Services Section CSS 
-13.Skills Section CSS
-14.Portfolio Section CSS
-15.Testimonials Section CSS
-16.Blog Section CSS
-17.Contact Us Section CSS
-18.Social Media Icons Right Side CSS
-19.Portfolio PopUp Window CSS
-20.Blog PopUp Window CSS
-21.Custome Scroll Bar CSS
-22.Whole Page Aniamtion CSS
-23.Portfolio gallery CSS
------------------------------------------------------------------- */
 /*-----------------------[ 1.Default CSS ]------------------------*/
 * {
     margin: 0;
@@ -622,12 +591,10 @@ canvas {
     }
 }
 
-/* olivia Ring Animation */
 #test {
     z-index: 0;
 }
 
-/* olivia spider animation */
 .particles-js-canvas-el {
     z-index: 0;
 }
@@ -717,6 +684,7 @@ canvas {
 }
 
 .sidebar .nav-links {
+    padding-bottom: 50px;
     height: 100%;
     padding: 0 0 0px 0;
     overflow: auto;
@@ -970,6 +938,7 @@ canvas {
 }
 
 .sidenav .logo {
+    padding-left: 25px;
     position: absolute;
     top: 40px;
     left: 25px;
@@ -1002,9 +971,6 @@ section#card_main {
     padding: 20px;
 }
 
-.olivia-img {
-    border-radius: 240px 40px 40px 40px;
-}
 
 .hire_me {
     width: 440px;
@@ -2831,5 +2797,61 @@ ul {
 
     .bg {
         opacity: 0.3;
+    }
+}
+
+/*-----------------------[ 24.Responsive Height Adjustments ]------------------------*/
+@media screen and (max-width: 1024px) {
+    .right_card_main {
+        width: 65%;
+        height: 65vh !important;
+        min-height: 65vh !important;
+        max-height: 65vh !important;
+    }
+    
+    .icetab-content {
+        height: 100%;
+        overflow-y: auto;
+    }
+    
+    .tabcontent.tab-active {
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .right_card_main {
+        width: 100%;
+        height: 70vh !important;
+        min-height: 70vh !important;
+        max-height: 70vh !important;
+        border-radius: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .right_card_main {
+        height: 75vh !important;
+        min-height: 75vh !important;
+        max-height: 75vh !important;
+        border-radius: 30px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .right_card_main {
+        height: 80vh !important;
+        min-height: 80vh !important;
+        max-height: 80vh !important;
+        border-radius: 20px;
+    }
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .right_card_main {
+        height: 85vh !important;
+        min-height: 85vh !important;
+        max-height: 85vh !important;
     }
 }
