@@ -823,8 +823,9 @@ canvas {
 
 .submit.error {
     background-color: var(--error-color) !important;
+    border: var(--error-color) !important;
+    border-radius: 20px !important;
     color: white !important;
-    transform: scale(0.95);
     animation: shake 0.5s ease-in-out;
 }
 
@@ -2764,6 +2765,7 @@ ul {
 
 /* Styles d'impression */
 @media print {
+
     .bubble,
     .cursor,
     .circles,
@@ -2774,12 +2776,12 @@ ul {
     button {
         display: none !important;
     }
-    
+
     body {
         background-color: white !important;
         color: black !important;
     }
-    
+
     .right_card_main,
     .card_background,
     .one_background {
@@ -2787,7 +2789,7 @@ ul {
         color: black !important;
         border: 1px solid #ddd !important;
     }
-    
+
     .card_text,
     .moswa,
     .bachelor,
@@ -2795,7 +2797,7 @@ ul {
     .project_name {
         color: black !important;
     }
-    
+
     .card_sub_text,
     .passionate,
     .university,
@@ -2804,7 +2806,7 @@ ul {
     .placerat {
         color: #666 !important;
     }
-    
+
     .one,
     .primary_yellow,
     .counter2,
@@ -2812,7 +2814,7 @@ ul {
     .help {
         color: #333 !important;
     }
-    
+
     a {
         color: black !important;
         text-decoration: underline;
@@ -2826,7 +2828,7 @@ ul {
         --one-background: #000000;
         --card-background: #000000;
     }
-    
+
     .bg {
         opacity: 0.3;
     }
