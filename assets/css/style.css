@@ -1966,10 +1966,6 @@ button:hover .shopping_bag {
     border-bottom: 2px solid #FFD700;
 }
 
-.form__input:focus:invalid {
-    border-bottom: 2px solid var(--error-color);
-}
-
 .form__label {
     color: #c1c1c1;
     position: absolute;
