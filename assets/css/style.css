@@ -1983,7 +1983,7 @@ button:hover .shopping_bag {
     gap: 10px;
 }
 
-.contact_number a {
+.contact_number , .contact_number a  {
     color: var(--card-sub-text);
     font-size: 16px;
     font-style: normal;
