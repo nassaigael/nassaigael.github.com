@@ -1,0 +1,104 @@
+{
+  "FR": {
+    "section_title": "Compétences",
+    "main_title": "Construction d’univers numériques via le code.",
+    "description": "Expertise en développement et compétences linguistiques, pour des solutions claires et bien structurées.",
+    "language_skills": "Compétences linguistiques",
+    "technical_skills": "Compétences techniques",
+    "languages": [
+      {
+        "name": "Français",
+        "level": "B2"
+      },
+      {
+        "name": "Anglais",
+        "level": "B1"
+      }
+    ],
+    "technologies": [
+      {
+        "name": "Java",
+        "percentage": 60
+      },
+      {
+        "name": "Javascript",
+        "percentage": 70
+      },
+      {
+        "name": "Postgresql",
+        "percentage": 80
+      },
+      {
+        "name": "React",
+        "percentage": 70
+      },
+      {
+        "name": "Tailwind",
+        "percentage": 77
+      },
+      {
+        "name": "HTML & CSS",
+        "percentage": 94
+      },
+      {
+        "name": "Figma",
+        "percentage": 89
+      },
+      {
+        "name": "Linux",
+        "percentage": 85
+      }
+    ]
+  },
+  "EN": {
+    "section_title": "Skills",
+    "main_title": "Building digital universes through code.",
+    "description": "Development expertise and language skills, for clear and well-structured solutions.",
+    "language_skills": "Language Skills",
+    "technical_skills": "Technical Skills",
+    "languages": [
+      {
+        "name": "French",
+        "level": "B2"
+      },
+      {
+        "name": "English",
+        "level": "B1"
+      }
+    ],
+    "technologies": [
+      {
+        "name": "Java",
+        "percentage": 60
+      },
+      {
+        "name": "Javascript",
+        "percentage": 70
+      },
+      {
+        "name": "Postgresql",
+        "percentage": 80
+      },
+      {
+        "name": "React",
+        "percentage": 70
+      },
+      {
+        "name": "Tailwind",
+        "percentage": 77
+      },
+      {
+        "name": "HTML & CSS",
+        "percentage": 94
+      },
+      {
+        "name": "Figma",
+        "percentage": 89
+      },
+      {
+        "name": "Linux",
+        "percentage": 85
+      }
+    ]
+  }
+}

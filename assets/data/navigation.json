@@ -1,0 +1,20 @@
+{
+  "FR": {
+    "home": "Accueil",
+    "about": "à propos",
+    "resume": "cv",
+    "services": "Services",
+    "skill": "Compétences",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "EN": {
+    "home": "Home",
+    "about": "About",
+    "resume": "CV",
+    "services": "Services",
+    "skill": "Skills",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  }
+}

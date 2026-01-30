@@ -1,0 +1,16 @@
+{
+  "FR": {
+    "section_title": "À Propos",
+    "main_title": "Façonner des histoires à travers le IA et l’Innovation",
+    "description": "Depuis mes premières expériences en développement, j’ai mené à bien plusieurs projets, travaillé en équipe et participé à la conception d’applications web innovantes. Curieux et rigoureux, je cherche à m’améliorer en permanence, en relevant de nouveaux défis techniques pas à pas.",
+    "experience": "ANNÉES D’EXPÉRIENCE",
+    "achievements": "Réalisations"
+  },
+  "EN": {
+    "section_title": "About",
+    "main_title": "Shaping stories through AI and Innovation",
+    "description": "Since my first development experiences, I have successfully completed several projects, worked in teams and participated in designing innovative web applications. Curious and rigorous, I constantly seek to improve by taking on new technical challenges step by step.",
+    "experience": "YEARS OF EXPERIENCE",
+    "achievements": "Achievements"
+  }
+}

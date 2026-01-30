@@ -1,4 +1,3 @@
-// Language Switcher avec icône RemixIcon
 document.addEventListener('DOMContentLoaded', () => {
     const langBtn   = document.getElementById('lang-toggle');
     const langMenu  = document.getElementById('lang-menu');
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
     });
 
-    // Sélection langue
     langOpts.forEach(opt => {
         opt.addEventListener('click', () => {
             const lang = opt.dataset.lang;
