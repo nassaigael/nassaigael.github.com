@@ -1,7 +1,26 @@
 // Preloader
 $(document).ready(function () {
+    // Ajouter les styles CSS pour les points
+    const style = document.createElement('style');
+    style.textContent = `
+        .dot:nth-child(1) { --deg: 0deg; }
+        .dot:nth-child(2) { --deg: 45deg; }
+        .dot:nth-child(3) { --deg: 90deg; }
+        .dot:nth-child(4) { --deg: 135deg; }
+        .dot:nth-child(5) { --deg: 180deg; }
+        .dot:nth-child(6) { --deg: 225deg; }
+        .dot:nth-child(7) { --deg: 270deg; }
+        .dot:nth-child(8) { --deg: 315deg; }
+    `;
+    document.head.appendChild(style);
+    
     setTimeout(function () {
         $('.wrapper').addClass('loaded');
+        
+        // Nettoyer après l'animation
+        setTimeout(function() {
+            $('#loader-wrapper').css('display', 'none');
+        }, 1000);
     }, 2500);
 });
 
