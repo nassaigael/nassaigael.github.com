@@ -5,32 +5,7 @@ $(document).ready(function () {
     }, 2500);
 });
 
-// olivia moswa text
-document.getElementsByClassName("olivia_moswa")[0];
-// olivia moswa text end
 
-// designer text
-firstText = "Designer";
-secondText = "Developer";
-thridText = "Freelancer"
-intervalTime = 600;
-window.load = displayText();
-function displayText() {
-    document.querySelector('.designer').innerText = firstText;
-    firstText.innerText
-    setTimeout(() => {
-        document.querySelector('.designer').innerText = secondText;
-    }, intervalTime * 3);
-    setTimeout(() => {
-        document.querySelector('.designer').innerText = thridText;
-    }, intervalTime * 5);
-}
-setInterval(() => {
-    displayText();
-}, intervalTime * 7);
-// designer text end
-
-// card Tabs 
 var tabs = document.getElementById('icetab-container').children;
 var tabs2 = document.getElementById('icetab-container2').children;
 var tabcontents = document.getElementById('icetab-content').children;
