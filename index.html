@@ -41,13 +41,29 @@
     <!-- ====================================== Cursor ===================================== -->
     <div class="cursor"></div>
     <!-- ====================================== Cursor End ===================================== -->
+
     <!-- ====================================== Logo ===================================== -->
     <div class="dark_toggle">
-        <div class="ul-header">
-            <img src="../assets/images/logo.png" alt="Logo" class="header-logo">
+        <div class="ul-header language-only-header">
+            <div class="language-switcher">
+                <button class="lang-btn" id="lang-toggle" aria-label="Changer de langue">
+                    <i class="ri-global-line lang-icon"></i>
+                    <span class="lang-current">🇫🇷</span>
+                </button>
+
+                <div class="lang-dropdown-menu" id="lang-menu">
+                    <button class="lang-option active" data-lang="fr" title="Français">
+                        🇫🇷
+                    </button>
+                    <button class="lang-option" data-lang="en" title="English">
+                        🇬🇧
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
     <!-- ====================================== Logo==================================== -->
+
     <header>
         <!-- ====================================== Fix Icon Menu ===================================== -->
         <div class="sidebar close">
@@ -120,6 +136,7 @@
             <p class="logo">
                 <span>&lt;/</span>na<span>ss</span>aï<span>&gt;</span>
             </p>
+
             <ul class="sidescreen_sub icetab-container" id="icetab-container2">
                 <li class="icetab current-tab" onclick="openNav()">
                     <a class="icons2" href="javascript:void(0)">
@@ -659,8 +676,7 @@
                     </div>
                 </div>
                 <div class="pop-up-footer">
-                    <button class="download_cv view_project font_w_font_s"
-                        onClick="window.open('');">
+                    <button class="download_cv view_project font_w_font_s" onClick="window.open('');">
                         <i class="ri-eye-line"></i> Voir le projet
                     </button>
                     <div class="share-button share">
@@ -715,6 +731,7 @@
     <script src="../assets/javascript/spider_animation/spider_animation.js"></script>
     <script src="../assets/javascript/script.js"></script>
     <script src="../assets/javascript/formulary.js"></script>
+    <script src="../assets/javascript/langage.js"></script>
 </body>
 
 </html>
