@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             project: project
         };
 
-        fetch('https://devserver-main--endearing-maamoul-fe1e08.netlify.app/api/contact', {
+        fetch('http://localhost:8082/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
