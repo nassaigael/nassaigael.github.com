@@ -4052,6 +4052,8 @@ ul {
 }
 
 .language-switcher {
+    margin-left: 100px;
+    padding-bottom: 50px;
     position: relative;
     z-index: 90;
 }
