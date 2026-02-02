@@ -4096,7 +4096,6 @@ ul {
     box-shadow: 0 0 10px #FFD700;
 }
 
-/* Media Queries pour mobile */
 @media (max-width: 1050px) {
     .ul-header.language-only-header {
         top: 20px;
@@ -4152,6 +4151,7 @@ ul {
 
 @media (max-width: 768px) {
     .ul-header.language-only-header {
+        padding-top: 10px;
         top: 15px;
         right: 15px;
     }
