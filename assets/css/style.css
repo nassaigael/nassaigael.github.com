@@ -160,13 +160,33 @@ textarea:focus {
     animation: fadeInUp 0.5s forwards;
 }
 
-.text-char:nth-child(1) { animation-delay: 0.1s; }
-.text-char:nth-child(2) { animation-delay: 0.2s; }
-.text-char:nth-child(3) { animation-delay: 0.3s; }
-.text-char:nth-child(4) { animation-delay: 0.4s; }
-.text-char:nth-child(5) { animation-delay: 0.5s; }
-.text-char:nth-child(6) { animation-delay: 0.6s; }
-.text-char:nth-child(7) { animation-delay: 0.7s; }
+.text-char:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.text-char:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.text-char:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.text-char:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.text-char:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.text-char:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.text-char:nth-child(7) {
+    animation-delay: 0.7s;
+}
 
 .progress-bar {
     width: 200px;
@@ -183,9 +203,11 @@ textarea:focus {
         transform: rotate(0deg);
         border-color: rgba(255, 215, 0, 0.3);
     }
+
     50% {
         border-color: rgba(255, 215, 0, 0.6);
     }
+
     100% {
         transform: rotate(360deg);
         border-color: rgba(255, 215, 0, 0.3);
@@ -197,6 +219,7 @@ textarea:focus {
         transform: rotate(0deg);
         border-color: rgba(255, 215, 0, 0.2);
     }
+
     100% {
         transform: rotate(-360deg);
         border-color: rgba(255, 215, 0, 0.6);
@@ -208,9 +231,11 @@ textarea:focus {
         transform: rotate(0deg);
         border-top-color: #FFD700;
     }
+
     50% {
         border-top-color: #FFC107;
     }
+
     100% {
         transform: rotate(360deg);
         border-top-color: #FFD700;
@@ -218,11 +243,14 @@ textarea:focus {
 }
 
 @keyframes pulseDot {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: rotate(var(--deg)) translate(60px) scale(1);
         opacity: 0.5;
         box-shadow: 0 0 5px #FFD700;
     }
+
     50% {
         transform: rotate(var(--deg)) translate(60px) scale(1.3);
         opacity: 1;
@@ -243,10 +271,12 @@ textarea:focus {
         width: 0%;
         box-shadow: 0 0 10px #FFD700;
     }
+
     70% {
         width: 90%;
         box-shadow: 0 0 15px #FFD700;
     }
+
     100% {
         width: 100%;
         box-shadow: 0 0 20px #FFD700;
@@ -273,6 +303,7 @@ textarea:focus {
         transform: scale(1);
         opacity: 1;
     }
+
     100% {
         transform: scale(1.5);
         opacity: 0;
@@ -4203,7 +4234,6 @@ ul {
     }
 }
 
-/* S'assurer que le bouton menu est bien positionné */
 @media (max-width: 1050px) {
     .toggle {
         position: fixed;
