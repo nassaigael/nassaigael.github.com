@@ -17,7 +17,6 @@ $(document).ready(function () {
     setTimeout(function () {
         $('.wrapper').addClass('loaded');
         
-        // Nettoyer après l'animation
         setTimeout(function() {
             $('#loader-wrapper').css('display', 'none');
         }, 1000);
