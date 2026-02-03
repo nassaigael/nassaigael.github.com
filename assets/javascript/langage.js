@@ -1,6 +1,5 @@
 // langage.js - Version avec transitions intégrées
 document.addEventListener('DOMContentLoaded', () => {
-    // ====================================== AJOUT DES STYLES CSS DIRECTEMENT =====================================
     const style = document.createElement('style');
     style.textContent = `
         .language-transition-element {
@@ -147,14 +146,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
-    // ====================================== FIN DES STYLES CSS =====================================
 
     const langBtn = document.getElementById('lang-toggle');
     const langMenu = document.getElementById('lang-menu');
     const langOpts = document.querySelectorAll('.lang-option');
     const langCurr = document.querySelector('.lang-current');
 
-    // État global des traductions
     let translations = {
         about: {},
         contact: {},
@@ -168,18 +165,14 @@ document.addEventListener('DOMContentLoaded', () => {
         modal: {}
     };
 
-    // Variables pour gérer les transitions
     let currentLang = localStorage.getItem('lang') || 'fr';
     let isTransitioning = false;
 
-    // Créer les éléments d'animation
     function createTransitionElements() {
-        // Overlay de fond
         const overlay = document.createElement('div');
         overlay.className = 'language-transition-overlay';
         document.body.appendChild(overlay);
         
-        // Effet de vague
         const wave = document.createElement('div');
         wave.className = 'language-wave';
         document.body.appendChild(wave);
@@ -187,7 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return { overlay, wave };
     }
 
-    // Animation de fade out
     function fadeOutTransition() {
         const elements = document.querySelectorAll('[data-key], [data-key-alt], [data-key-placeholder]');
         
@@ -203,7 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Promise(resolve => setTimeout(resolve, 200));
     }
 
-    // Animation de fade in
     function fadeInTransition() {
         const elements = document.querySelectorAll('[data-key], [data-key-alt], [data-key-placeholder]');
         
@@ -223,7 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Animation du drapeau
     function animateFlag(newFlag) {
         langCurr.classList.add('animating');
         
@@ -238,7 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Effet de vague sur l'écran
     function playWaveAnimation() {
         const wave = document.querySelector('.language-wave');
         if (wave) {
@@ -249,7 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Charger toutes les traductions
     async function loadTranslations(lang) {
         const files = [
             'about', 'contact', 'home', 'navigation', 
@@ -275,34 +263,25 @@ document.addEventListener('DOMContentLoaded', () => {
         await Promise.all(promises);
     }
 
-    // Appliquer les traductions avec animations
     async function applyTranslationsWithAnimation() {
         if (isTransitioning) return;
         isTransitioning = true;
         
         try {
-            // 1. Créer les éléments d'animation si nécessaire
-            if (!document.querySelector('.language-transition-overlay')) {
+            if (!document.querySelector('.language-transition-overlay'))
                 createTransitionElements();
-            }
             
-            // 2. Activer l'overlay
             const overlay = document.querySelector('.language-transition-overlay');
             if (overlay) overlay.classList.add('active');
             
-            // 3. Animation de fade out
             await fadeOutTransition();
             
-            // 4. Lancer l'effet de vague
             playWaveAnimation();
             
-            // 5. Appliquer les nouvelles traductions
             applyTranslations();
             
-            // 6. Animation de fade in
             await fadeInTransition();
             
-            // 7. Désactiver l'overlay
             if (overlay) overlay.classList.remove('active');
             
         } catch (error) {
@@ -312,9 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Appliquer les traductions
     function applyTranslations() {
-        // Traduire les éléments avec data-key
         document.querySelectorAll('[data-key]').forEach(element => {
             const key = element.dataset.key;
             const keys = key.split('.');
@@ -344,7 +321,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Traduire les textes alternatifs d'images avec data-key-alt
         document.querySelectorAll('[data-key-alt]').forEach(img => {
             const key = img.dataset.keyAlt;
             const keys = key.split('.');
@@ -360,30 +336,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Mettre à jour l'attribut lang du document
         document.documentElement.lang = currentLang;
     }
 
-    // Gestionnaire de changement de langue avec animations
     async function changeLanguage(lang) {
         if (currentLang === lang || isTransitioning) return;
         
         console.log('Changement langue →', lang);
         
         try {
-            // Charger les nouvelles traductions
             await loadTranslations(lang);
             
-            // Appliquer avec animations
             await applyTranslationsWithAnimation();
             
-            // Mettre à jour la langue courante
             currentLang = lang;
             
-            // Stocker la langue sélectionnée
             localStorage.setItem('lang', lang);
             
-            // Animer le drapeau
             const flag = lang === 'fr' ? '🇫🇷' : '🇬🇧';
             await animateFlag(flag);
             
@@ -394,7 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Événements pour le sélecteur de langue
     langBtn.addEventListener('click', e => {
         e.stopPropagation();
         langMenu.classList.toggle('show');
@@ -416,42 +384,34 @@ document.addEventListener('DOMContentLoaded', () => {
         opt.addEventListener('click', async () => {
             const lang = opt.dataset.lang;
             
-            // Mettre à jour l'état visuel
             langOpts.forEach(o => o.classList.remove('active'));
             opt.classList.add('active');
             
             langMenu.classList.remove('show');
             langBtn.classList.remove('menu-open');
             
-            // Changer la langue avec animations
             await changeLanguage(lang);
         });
     });
 
-    // Initialisation au chargement
     async function init() {
         const savedLang = localStorage.getItem('lang') || 'fr';
         
-        // Créer les éléments d'animation
         createTransitionElements();
         
-        // Activer l'option correspondante
         const activeOpt = document.querySelector(`.lang-option[data-lang="${savedLang}"]`);
         if (activeOpt) {
             activeOpt.classList.add('active');
         }
         
-        // Charger et appliquer les traductions (sans animation au chargement)
         await loadTranslations(savedLang);
         applyTranslations();
         
-        // Mettre à jour le drapeau
         const flag = savedLang === 'fr' ? '🇫🇷' : '🇬🇧';
         langCurr.textContent = flag;
         
         currentLang = savedLang;
     }
 
-    // Démarrer l'initialisation
     init();
 });
