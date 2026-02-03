@@ -12,11 +12,11 @@ $(document).ready(function () {
         .dot:nth-child(8) { --deg: 315deg; }
     `;
     document.head.appendChild(style);
-    
+
     setTimeout(function () {
         $('.wrapper').addClass('loaded');
-        
-        setTimeout(function() {
+
+        setTimeout(function () {
             $('#loader-wrapper').css('display', 'none');
         }, 1000);
     }, 2500);
@@ -27,7 +27,7 @@ var tabs = document.getElementById('icetab-container').children;
 var tabs2 = document.getElementById('icetab-container2').children;
 var tabcontents = document.getElementById('icetab-content').children;
 
-var mybtn = function () {
+var mybtn = () => {
     var tabchange = this.mynum;
     for (var int = 0; int < tabcontents.length; int++) {
         tabcontents[int].className = 'tabcontent';
@@ -41,7 +41,7 @@ var mybtn = function () {
     }
 }
 
-var mybtn2 = function () {
+var mybtn2 = () => {
     var tabchange = this.mynum;
     for (var int = 0; int < tabcontents.length; int++) {
         tabcontents[int].className = 'tabcontent';
@@ -179,17 +179,20 @@ $('input').focus(function () {
 });
 // form end
 
-// side Nav 
-function openNav() {
-    var side = document.getElementById("mySidenav");
-    if (side.style.width == "300px") {
-        side.style.width = "0px";
-    } else {
-        side.style.width = "300px";
-    }
+const openNav = () => {
+    let side = document.getElementById("mySidenav");
+    let toggle = document.querySelector(".toggle");
+    side.style.width = "300px";
+    toggle.style.display = "none";
+    document.querySelector(".closebtn").style.display = "block";
 }
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+
+const closeNav = () => {
+    var side = document.getElementById("mySidenav");
+    var toggle = document.querySelector(".toggle");
+    side.style.width = "0";
+    toggle.style.display = "flex";
+    document.querySelector(".closebtn").style.display = "none";
 }
 
 // cursor
