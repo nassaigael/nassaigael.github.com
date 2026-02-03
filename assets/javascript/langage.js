@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLang = localStorage.getItem('lang') || 'fr';
     let isTransitioning = false;
 
-    function createTransitionElements() {
+    const createTransitionElements = () => {
         const overlay = document.createElement('div');
         overlay.className = 'language-transition-overlay';
         document.body.appendChild(overlay);
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return { overlay, wave };
     }
 
-    function fadeOutTransition() {
+    const fadeOutTransition = () => {
         const elements = document.querySelectorAll('[data-key], [data-key-alt], [data-key-placeholder]');
         
         elements.forEach(el => {
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Promise(resolve => setTimeout(resolve, 200));
     }
 
-    function fadeInTransition() {
+    const fadeInTransition = () => {
         const elements = document.querySelectorAll('[data-key], [data-key-alt], [data-key-placeholder]');
         
         elements.forEach(el => {
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function animateFlag(newFlag) {
+    const animateFlag = (newFlag) => {
         langCurr.classList.add('animating');
         
         return new Promise(resolve => {
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function playWaveAnimation() {
+    const playWaveAnimation = () => {
         const wave = document.querySelector('.language-wave');
         if (wave) {
             wave.classList.add('active');
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function applyTranslations() {
+    const applyTranslations = () => {
         document.querySelectorAll('[data-key]').forEach(element => {
             const key = element.dataset.key;
             const keys = key.split('.');
