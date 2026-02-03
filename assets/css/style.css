@@ -1156,7 +1156,7 @@ button:hover {
     background-color: var(--one-background);
     padding: 20px;
     border-radius: 20px;
-    transition: all 0.1s ease;
+    transition: all 0.3s ease;
 }
 
 .service_box:hover {
