@@ -509,7 +509,7 @@ canvas {
 .grow,
 .grow-small {
     transform: scale(2);
-    background: #FFFF;
+    background: ;
     mix-blend-mode: difference;
     border: none;
 }
