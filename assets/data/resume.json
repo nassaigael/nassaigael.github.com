@@ -7,7 +7,7 @@
     },
     "experience": {
       "title": "Expérience",
-      "description": "À travers différents projets académiques et personnels, j’ai pu mettre en pratique mes compétences techniques et développer des solutions concrètes"
+      "description": "À travers différents projets académiques et personnels, j'ai pu mettre en pratique mes compétences techniques et développer des solutions concrètes."
     },
     "degrees": [
       {
@@ -23,14 +23,14 @@
       {
         "title": "Baccalauréat général — Série OSE",
         "school": "Lycée VOHIPENO (LVP) / 2021 - 2022",
-        "description": "Cursus centré sur les mathématiques appliquées, l’économie et la géographie, développant une analyse rigoureuse des phénomènes socio-économiques et une solide culture générale."
+        "description": "Cursus centré sur les mathématiques appliquées, l'économie et la géographie, développant une analyse rigoureuse des phénomènes socio-économiques et une solide culture générale."
       }
     ],
     "jobs": [
       {
         "title": "Développeur bénévole",
         "company": "Association FIZANAKARA / Actuellement",
-        "description": "Mon rôle consiste à faire évoluer le site web de l’association et à imaginer des applications pratiques (web/mobile) pour fluidifier ses opérations et renforcer son impact."
+        "description": "Mon rôle consiste à faire évoluer le site web de l'association et à imaginer des applications pratiques (web/mobile) pour fluidifier ses opérations et renforcer son impact."
       }
     ]
   },
@@ -42,7 +42,7 @@
     },
     "experience": {
       "title": "Experience",
-      "description": "Through various academic and personal projects, I was able to put my technical skills into practice and develop concrete solutions"
+      "description": "Through various academic and personal projects, I was able to put my technical skills into practice and develop concrete solutions."
     },
     "degrees": [
       {
