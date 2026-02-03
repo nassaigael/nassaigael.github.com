@@ -6,19 +6,19 @@
     "services": [
       {
         "title": "UX/UI Design",
-        "description": "Conception d'interfaces intuitives et d'expériences fluides, pensées pour l'utilisateur final."
+        "descriptionOne": "Conception d'interfaces intuitives et d'expériences fluides, pensées pour l'utilisateur final."
       },
       {
         "title": "Design de prompts",
-        "description": "Prompts sophistiqués, conçus pour libérer le potentiel de l’IA selon vos objectifs"
+        "descriptionOne": "Prompts sophistiqués, conçus pour libérer le potentiel de l’IA selon vos objectifs"
       },
       {
         "title": "Développement web",
-        "description": "Sites web sur mesure : performants, ergonomiques, et codés pour durer."
+        "descriptionOne": "Sites web sur mesure : performants, ergonomiques, et codés pour durer."
       },
       {
         "title": "SEO & Marketing",
-        "description": "Stratégies SEO et marketing digital pour booster votre visibilité, votre trafic et vos conversions."
+        "descriptionOne": "Stratégies SEO et marketing digital pour booster votre visibilité, votre trafic et vos conversions."
       }
     ]
   },
@@ -29,19 +29,19 @@
     "services": [
       {
         "title": "UX/UI Design",
-        "description": "Design of intuitive interfaces and fluid experiences, designed for the end user."
+        "descriptionOne": "Design of intuitive interfaces and fluid experiences, designed for the end user."
       },
       {
         "title": "Prompt Design",
-        "description": "Sophisticated prompts, designed to unlock AI's potential according to your objectives"
+        "descriptionOne": "Sophisticated prompts, designed to unlock AI's potential according to your objectives"
       },
       {
         "title": "Web Development",
-        "description": "Custom websites: high-performance, ergonomic, and coded to last."
+        "descriptionOne": "Custom websites: high-performance, ergonomic, and coded to last."
       },
       {
         "title": "SEO & Marketing",
-        "description": "SEO and digital marketing strategies to boost your visibility, traffic and conversions."
+        "descriptionOne": "SEO and digital marketing strategies to boost your visibility, traffic and conversions."
       }
     ]
   }
