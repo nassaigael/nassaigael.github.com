@@ -1,6 +1,5 @@
 // Preloader
 $(document).ready(function () {
-    // Ajouter les styles CSS pour les points
     const style = document.createElement('style');
     style.textContent = `
         .dot:nth-child(1) { --deg: 0deg; }
@@ -17,7 +16,6 @@ $(document).ready(function () {
     setTimeout(function () {
         $('.wrapper').addClass('loaded');
         
-        // Nettoyer après l'animation
         setTimeout(function() {
             $('#loader-wrapper').css('display', 'none');
         }, 1000);
