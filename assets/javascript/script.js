@@ -27,7 +27,7 @@ var tabs = document.getElementById('icetab-container').children;
 var tabs2 = document.getElementById('icetab-container2').children;
 var tabcontents = document.getElementById('icetab-content').children;
 
-var mybtn = () => {
+var mybtn = function () {
     var tabchange = this.mynum;
     for (var int = 0; int < tabcontents.length; int++) {
         tabcontents[int].className = 'tabcontent';
@@ -41,7 +41,7 @@ var mybtn = () => {
     }
 }
 
-var mybtn2 = () => {
+var mybtn2 = function () {
     var tabchange = this.mynum;
     for (var int = 0; int < tabcontents.length; int++) {
         tabcontents[int].className = 'tabcontent';
@@ -178,7 +178,6 @@ $('input').focus(function () {
     })
 });
 // form end
-
 const openNav = () => {
     let side = document.getElementById("mySidenav");
     let toggle = document.querySelector(".toggle");
