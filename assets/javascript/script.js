@@ -63,9 +63,7 @@ for (var index = 0; index < tabs2.length; index++) {
     tabs2[index].mynum = index;
     tabs2[index].addEventListener('click', mybtn2, false);
 }
-// card Tabs end
 
-// circle Img my project click event
 const elements = document.getElementById("portfolio");
 const homeNavabr = document.getElementById("home");
 const circular_imgClick = document.getElementsByClassName("circular_text_main");
@@ -75,35 +73,6 @@ circular_imgClick[0].addEventListener("click", () => {
     elements.classList.add("tab-active");
 });
 
-// Dark/ Light Mode Toggle
-function myFunction() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-
-    var sunIcon = document.getElementById("sunIcon");
-    var moonIcon = document.getElementById("moonIcon");
-
-    if (element.classList.contains("dark-mode")) {
-        sunIcon.classList.add("hidden");
-        moonIcon.classList.remove("hidden");
-        localStorage.setItem("mode", "dark");
-    } else {
-        moonIcon.classList.add("hidden");
-        sunIcon.classList.remove("hidden");
-        localStorage.setItem("mode", "light");
-    }
-}
-document.addEventListener("DOMContentLoaded", function () {
-    const storedMode = localStorage.getItem("mode");
-    if (storedMode === "dark") {
-        document.body.classList.add("dark-mode");
-        var sunIcon = document.getElementById("sunIcon");
-        var moonIcon = document.getElementById("moonIcon");
-        sunIcon.classList.add("hidden");
-        moonIcon.classList.remove("hidden");
-    }
-});
-// Dark/ Light Mode Toggle end
 
 // Portfolio Pop-up
 $(".pop-up").on("click", function () {
@@ -274,31 +243,6 @@ const hiddenElements = document.querySelectorAll('.fade_up');
 hiddenElements.forEach((el) => observer.observe(el));
 
 
-// pop video
-$(document).ready(function () {
-    $('#vimeo').magnificPopup({
-        items: {
-            src: 'https://vimeo.com/259411563'
-        },
-        type: 'iframe'
-    });
-
-    $('#youtube').magnificPopup({
-        items: {
-            src: 'https://www.youtube.com/watch?v=OZzoAw9QHXY'
-        },
-        type: 'iframe'
-    });
-
-    $('.link').magnificPopup({
-        type: 'soundcloud',
-        items: {
-            src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/163522130&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
-        },
-        type: 'iframe',
-    });
-
-});
 
 // gallary code
 window.addEventListener("load", () => {
