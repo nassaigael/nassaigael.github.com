@@ -1156,11 +1156,12 @@ button:hover {
     background-color: var(--one-background);
     padding: 20px;
     border-radius: 20px;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
 }
 
 .service_box:hover {
     background-color: var(--background-hover-card);
+    transform: scale(1.05);
 }
 
 .services_icon {
