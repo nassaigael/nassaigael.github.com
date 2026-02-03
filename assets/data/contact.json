@@ -17,7 +17,20 @@
       "location": "Antananarivo, Madagascar"
     },
     "copyright": "© nassaigael 2026. Tous droits réservés by",
-    "author": "Gaël RAMAHANDRISOA"
+    "author": "Gaël RAMAHANDRISOA",
+    "placeholders": {
+      "name": "Votre nom complet",
+      "email": "exemple@email.com",
+      "phone": "Votre numéro de téléphone",
+      "subject": "Objet de votre message",
+      "project": "Décrivez votre projet en détail..."
+    },
+    "alt": {
+      "phone": "Icône téléphone",
+      "email": "Icône email",
+      "location": "Icône localisation",
+      "map": "Carte de localisation"
+    }
   },
   "EN": {
     "section_title": "Contact me",

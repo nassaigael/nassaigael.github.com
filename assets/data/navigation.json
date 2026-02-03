@@ -6,7 +6,17 @@
     "services": "Services",
     "skill": "Compétences",
     "portfolio": "Portfolio",
-    "contact": "Contact"
+    "contact": "Contact",
+    "alt": {
+      "home": "Icône d'accueil",
+      "about": "Icône à propos",
+      "resume": "Icône CV",
+      "services": "Icône services",
+      "skills": "Icône compétences",
+      "portfolio": "Icône portfolio",
+      "contact": "Icône contact",
+      "menu": "Icône menu"
+    }
   },
   "EN": {
     "home": "Home",
@@ -15,6 +25,16 @@
     "services": "Services",
     "skill": "Skills",
     "portfolio": "Portfolio",
-    "contact": "Contact"
+    "contact": "Contact",
+    "alt": {
+      "home": "Home icon",
+      "about": "About icon",
+      "resume": "Resume icon",
+      "services": "Services icon",
+      "skills": "Skills icon",
+      "portfolio": "Portfolio icon",
+      "contact": "Contact icon",
+      "menu": "Menu icon"
+    }
   }
 }
