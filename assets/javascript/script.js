@@ -22,76 +22,159 @@ $(document).ready(function () {
     }, 2500);
 });
 
-var tabs = document.getElementById('icetab-container').children;
-var tabs2 = document.getElementById('icetab-container2').children;
-var tabcontents = document.getElementById('icetab-content').children;
+// Navigation system 
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.getElementById('icetab-container')?.children || [];
+    const tabs2 = document.getElementById('icetab-container2')?.children || [];
+    const tabcontents = document.getElementById('icetab-content')?.children || [];
+    
+    console.log('Navigation initialized:', {
+        tabs: tabs.length,
+        tabs2: tabs2.length,
+        tabcontents: tabcontents.length
+    });
 
-const syncActiveTabs  = (activeIndex) => {
-    for (var i = 0; i < tabs.length; i++) {
-        tabs[i].className = 'icetab';
-        tabs2[i].className = 'icetab';
+    const syncActiveTabs = (activeIndex) => {
+        console.log('Syncing active tab:', activeIndex);
+        
+        for (let i = 0; i < Math.max(tabs.length, tabs2.length); i++) {
+            if (tabs[i]) tabs[i].className = 'icetab';
+            if (tabs2[i]) tabs2[i].className = 'icetab';
+        }
+
+        if (tabs[activeIndex]) {
+            tabs[activeIndex].classList.add('current-tab');
+            console.log('Added current-tab to sidebar tab:', activeIndex);
+        }
+        if (tabs2[activeIndex]) {
+            tabs2[activeIndex].classList.add('current-tab');
+            console.log('Added current-tab to sidenav tab:', activeIndex);
+        }
     }
 
-    if (tabs[activeIndex]) tabs[activeIndex].classList.add('current-tab');
-    if (tabs2[activeIndex]) tabs2[activeIndex].classList.add('current-tab');
-}
+    const mybtn = function (e) {
+        if (e) e.preventDefault();
+        const tabchange = this.mynum;
+        
+        console.log('Sidebar click - tab:', tabchange);
 
-const mybtn = function () {
-    var tabchange = this.mynum;
-
-    for (var int = 0; int < tabcontents.length; int++) {
-        tabcontents[int].className = 'tabcontent';
-        tabcontents[tabchange].classList.add('tab-active');
-    }
-
-    syncActiveTabs(tabchange);
-}
-
-var mybtn2 = function () {
-    var tabchange = this.mynum;
-    
-    for (var int = 0; int < tabcontents.length; int++) {
-        tabcontents[int].className = 'tabcontent';
-        tabcontents[tabchange].classList.add('tab-active');
-    }
-    
-    syncActiveTabs(tabchange);
-    
-    closeNav(300);
-}
-
-for (var index = 0; index < tabs2.length; index++) {
-    tabs2[index].mynum = index;
-    tabs2[index].addEventListener('click', function(e) {
-        e.preventDefault();
-        mybtn2.call(this);
-    }, false);
-}
-
-// Portfolio click from home
-const elements = document.getElementById("portfolio");
-const homeNavabr = document.getElementById("home");
-const circular_imgClick = document.getElementsByClassName("circular_text_main");
-
-if (circular_imgClick.length > 0) {
-    circular_imgClick[0].addEventListener("click", () => {
-        for (var int = 0; int < tabcontents.length; int++) {
+        for (let int = 0; int < tabcontents.length; int++) {
             tabcontents[int].className = 'tabcontent';
         }
-        homeNavabr.classList.remove("tab-active");
-        elements.classList.add("tab-active");
+        
+        if (tabcontents[tabchange]) {
+            tabcontents[tabchange].classList.add('tab-active');
+            console.log('Activated content:', tabcontents[tabchange].id);
+        }
 
-        syncActiveTabs(5);
-    });
-}
+        syncActiveTabs(tabchange);
+    }
 
-// Portfolio Pop-up
-$(".pop-up").on("click", function () {
-    $(".overlay").addClass("is-on");
+    const mybtn2 = function (e) {
+        if (e) e.preventDefault();
+        const tabchange = this.mynum;
+        
+        console.log('Sidenav click - tab:', tabchange);
+
+        for (let int = 0; int < tabcontents.length; int++) {
+            tabcontents[int].className = 'tabcontent';
+        }
+        
+        if (tabcontents[tabchange]) {
+            tabcontents[tabchange].classList.add('tab-active');
+            console.log('Activated content:', tabcontents[tabchange].id);
+        }
+
+        syncActiveTabs(tabchange);
+        
+        setTimeout(() => {
+            closeNav();
+        }, 300);
+    }
+
+    if (tabs.length > 0) {
+        for (let index = 0; index < tabs.length; index++) {
+            tabs[index].mynum = index;
+            
+            const oldTab = tabs[index];
+            const newTab = oldTab.cloneNode(true);
+            oldTab.parentNode.replaceChild(newTab, oldTab);
+            
+            newTab.mynum = index;
+            newTab.addEventListener('click', function(e) {
+                mybtn.call(this, e);
+            }, false);
+            
+            tabs[index] = newTab;
+        }
+        console.log('Sidebar listeners added:', tabs.length);
+    }
+
+    if (tabs2.length > 0) {
+        for (let index = 0; index < tabs2.length; index++) {
+            tabs2[index].mynum = index;
+            
+            const oldTab = tabs2[index];
+            const newTab = oldTab.cloneNode(true);
+            oldTab.parentNode.replaceChild(newTab, oldTab);
+            
+            newTab.mynum = index;
+            newTab.addEventListener('click', function(e) {
+                mybtn2.call(this, e);
+            }, false);
+            
+            tabs2[index] = newTab;
+        }
+        console.log('Sidenav listeners added:', tabs2.length);
+    }
+
+    const elements = document.getElementById("portfolio");
+    const homeNavabr = document.getElementById("home");
+    const circular_imgClick = document.getElementsByClassName("circular_text_main");
+
+    if (circular_imgClick.length > 0 && elements && homeNavabr) {
+        circular_imgClick[0].addEventListener("click", () => {
+            console.log('Portfolio circle clicked');
+            
+            for (let int = 0; int < tabcontents.length; int++) {
+                tabcontents[int].className = 'tabcontent';
+            }
+            homeNavabr.classList.remove("tab-active");
+            elements.classList.add("tab-active");
+
+            syncActiveTabs(5);
+        });
+    }
+
+    if (tabcontents.length > 0) {
+        let activeIndex = -1;
+        
+        for (let i = 0; i < tabcontents.length; i++) {
+            if (tabcontents[i].classList.contains('tab-active')) {
+                activeIndex = i;
+                break;
+            }
+        }
+        
+        if (activeIndex === -1) {
+            activeIndex = 0;
+            tabcontents[0].classList.add('tab-active');
+        }
+        
+        syncActiveTabs(activeIndex);
+        console.log('Initial active tab:', activeIndex, tabcontents[activeIndex]?.id);
+    }
 });
 
-$("#close").on("click", function () {
-    $(".overlay").removeClass("is-on");
+// Portfolio Pop-up
+$(document).ready(function() {
+    $(".pop-up").on("click", function () {
+        $(".overlay").addClass("is-on");
+    });
+
+    $("#close").on("click", function () {
+        $(".overlay").removeClass("is-on");
+    });
 });
 
 // Share Btn
@@ -172,90 +255,100 @@ $(function () {
 });
 
 // form
-$('input').focus(function () {
-    $(this).parent().addClass('active');
+$(document).ready(function() {
+    $('input').focus(function () {
+        $(this).parent().addClass('active');
+    });
+    
     $('input').focusout(function () {
         if ($(this).val() == '') {
             $(this).parent().removeClass('active');
         } else {
             $(this).parent().addClass('active');
         }
-    })
+    });
 });
 
 // Side navigation functions
 const openNav = () => {
     let side = document.getElementById("mySidenav");
     let toggle = document.querySelector(".toggle");
-    side.style.width = "300px";
-    toggle.style.display = "none";
-    document.querySelector(".closebtn").style.display = "block";
+    if (side && toggle) {
+        side.style.width = "300px";
+        toggle.style.display = "none";
+        const closeBtn = document.querySelector(".closebtn");
+        if (closeBtn) closeBtn.style.display = "block";
+    }
 }
 
-// MODIFIEZ cette fonction pour NE PAS fermer automatiquement
-const closeNav = (delay = 0) => {
-    setTimeout(() => {
-        var side = document.getElementById("mySidenav");
-        var toggle = document.querySelector(".toggle");
+const closeNav = () => {
+    var side = document.getElementById("mySidenav");
+    var toggle = document.querySelector(".toggle");
+    if (side && toggle) {
         side.style.width = "0";
         toggle.style.display = "flex";
-        document.querySelector(".closebtn").style.display = "none";
-    }, delay);
+        const closeBtn = document.querySelector(".closebtn");
+        if (closeBtn) closeBtn.style.display = "none";
+    }
 }
 
-
 // Cursor
-let cursor = document.querySelector('.cursor');
-let cursorScale = document.querySelectorAll('a,button,.pop-up,.trigger,.share,#close,.toggle,#vimeo,#youtube,.link,.gallery');
-let mouseX = 0;
-let mouseY = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    let cursor = document.querySelector('.cursor');
+    let cursorScale = document.querySelectorAll('a,button,.pop-up,.trigger,.share,#close,.toggle,#vimeo,#youtube,.link,.gallery');
+    let mouseX = 0;
+    let mouseY = 0;
 
-if (cursor) {
-    gsap.to({}, 0.016, {
-        repeat: -1,
-        onRepeat: function () {
-            gsap.set(cursor, {
-                css: {
-                    left: mouseX,
-                    top: mouseY,
-                }
-            })
-        }
-    });
-
-    window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    cursorScale.forEach(link => {
-        link.addEventListener('mousemove', () => {
-            cursor.classList.add('grow');
-            if (link.classList.contains('small')) {
-                cursor.classList.remove('grow');
-                cursor.classList.add('grow-small');
+    if (cursor && typeof gsap !== 'undefined') {
+        gsap.to({}, 0.016, {
+            repeat: -1,
+            onRepeat: function () {
+                gsap.set(cursor, {
+                    css: {
+                        left: mouseX,
+                        top: mouseY,
+                    }
+                })
             }
         });
 
-        link.addEventListener('mouseleave', () => {
-            cursor.classList.remove('grow');
-            cursor.classList.remove('grow-small');
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
         });
-    });
-}
+
+        cursorScale.forEach(link => {
+            link.addEventListener('mousemove', () => {
+                cursor.classList.add('grow');
+                if (link.classList.contains('small')) {
+                    cursor.classList.remove('grow');
+                    cursor.classList.add('grow-small');
+                }
+            });
+
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('grow');
+                cursor.classList.remove('grow-small');
+            });
+        });
+    }
+});
 
 // Whole Page Scrolling Animation
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
     });
+    
+    const hiddenElements = document.querySelectorAll('.fade_up');
+    hiddenElements.forEach((el) => observer.observe(el));
 });
-const hiddenElements = document.querySelectorAll('.fade_up');
-hiddenElements.forEach((el) => observer.observe(el));
 
 // Gallery code
 window.addEventListener("load", () => {
@@ -267,23 +360,4 @@ window.addEventListener("load", () => {
 // Skill bar function
 $(function () {
     $('.circlechart').circlechart();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const activeTab = document.querySelector('.tabcontent.tab-active');
-    if (activeTab) {
-        const tabContents = document.querySelectorAll('.tabcontent');
-        let activeIndex = -1;
-
-        for (let i = 0; i < tabContents.length; i++) {
-            if (tabContents[i] === activeTab) {
-                activeIndex = i;
-                break;
-            }
-        }
-
-        if (activeIndex !== -1) {
-            syncActiveTabs(activeIndex);
-        }
-    }
 });
