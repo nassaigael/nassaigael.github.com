@@ -1,11 +1,9 @@
-// benchmark.js
 const fs = require('fs-extra');
 const path = require('path');
 
 async function runBenchmark() {
     console.log('📊 BENCHMARK AVANT/APRÈS OPTIMISATION\n');
     
-    // Mesurer la taille des fichiers
     const sections = {
         'CSS': [
             'assets/css/style.css',
@@ -44,15 +42,14 @@ async function runBenchmark() {
                     const stats = await fs.stat(file);
                     sectionBefore += stats.size;
                     
-                    // Calculer la taille après optimisation
                     let afterSize = stats.size;
                     
                     if (file.endsWith('.css')) {
-                        afterSize = stats.size * 0.3; // -70%
+                        afterSize = stats.size * 0.3;
                     } else if (file.endsWith('.js')) {
-                        afterSize = stats.size * 0.4; // -60%
+                        afterSize = stats.size * 0.4;
                     } else if (file.match(/\.(png|jpg|jpeg)$/i)) {
-                        afterSize = stats.size * 0.2; // -80% pour WebP
+                        afterSize = stats.size * 0.2;
                     }
                     
                     sectionAfter += afterSize;
