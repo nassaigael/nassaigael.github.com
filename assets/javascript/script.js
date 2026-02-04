@@ -26,39 +26,34 @@ var tabs = document.getElementById('icetab-container').children;
 var tabs2 = document.getElementById('icetab-container2').children;
 var tabcontents = document.getElementById('icetab-content').children;
 
-function syncActiveTabs(activeIndex) {
+const syncActiveTabs  = (activeIndex) => {
     for (var i = 0; i < tabs.length; i++) {
         tabs[i].className = 'icetab';
         tabs2[i].className = 'icetab';
     }
-    
+
     if (tabs[activeIndex]) tabs[activeIndex].classList.add('current-tab');
     if (tabs2[activeIndex]) tabs2[activeIndex].classList.add('current-tab');
 }
 
-var mybtn = function () {
+const mybtn = function () {
     var tabchange = this.mynum;
-    
-    // Mettre à jour le contenu
+
     for (var int = 0; int < tabcontents.length; int++) {
         tabcontents[int].className = 'tabcontent';
         tabcontents[tabchange].classList.add('tab-active');
     }
-    
-    // Synchroniser les menus
+
     syncActiveTabs(tabchange);
 }
 
-var mybtn2 = function () {
+const mybtn2 = () => {
     var tabchange = this.mynum;
-    
-    // Mettre à jour le contenu
+
     for (var int = 0; int < tabcontents.length; int++) {
         tabcontents[int].className = 'tabcontent';
         tabcontents[tabchange].classList.add('tab-active');
     }
-    
-    // Synchroniser les menus
     syncActiveTabs(tabchange);
 }
 
@@ -79,14 +74,12 @@ const circular_imgClick = document.getElementsByClassName("circular_text_main");
 
 if (circular_imgClick.length > 0) {
     circular_imgClick[0].addEventListener("click", () => {
-        // Mettre à jour le contenu
         for (var int = 0; int < tabcontents.length; int++) {
             tabcontents[int].className = 'tabcontent';
         }
         homeNavabr.classList.remove("tab-active");
         elements.classList.add("tab-active");
-        
-        // Synchroniser les menus (portfolio est l'index 5)
+
         syncActiveTabs(5);
     });
 }
@@ -229,7 +222,7 @@ if (cursor) {
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
-    
+
     cursorScale.forEach(link => {
         link.addEventListener('mousemove', () => {
             cursor.classList.add('grow');
@@ -271,19 +264,19 @@ $(function () {
     $('.circlechart').circlechart();
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const activeTab = document.querySelector('.tabcontent.tab-active');
     if (activeTab) {
         const tabContents = document.querySelectorAll('.tabcontent');
         let activeIndex = -1;
-        
+
         for (let i = 0; i < tabContents.length; i++) {
             if (tabContents[i] === activeTab) {
                 activeIndex = i;
                 break;
             }
         }
-        
+
         if (activeIndex !== -1) {
             syncActiveTabs(activeIndex);
         }
