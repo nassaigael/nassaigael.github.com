@@ -47,24 +47,25 @@ const mybtn = function () {
     syncActiveTabs(tabchange);
 }
 
-const mybtn2 = () => {
+var mybtn2 = function () {
     var tabchange = this.mynum;
-
+    
     for (var int = 0; int < tabcontents.length; int++) {
         tabcontents[int].className = 'tabcontent';
         tabcontents[tabchange].classList.add('tab-active');
     }
+    
     syncActiveTabs(tabchange);
-}
-
-for (var index = 0; index < tabs.length; index++) {
-    tabs[index].mynum = index;
-    tabs[index].addEventListener('click', mybtn, false);
+    
+    closeNav(300);
 }
 
 for (var index = 0; index < tabs2.length; index++) {
     tabs2[index].mynum = index;
-    tabs2[index].addEventListener('click', mybtn2, false);
+    tabs2[index].addEventListener('click', function(e) {
+        e.preventDefault();
+        mybtn2.call(this);
+    }, false);
 }
 
 // Portfolio click from home
@@ -182,7 +183,7 @@ $('input').focus(function () {
     })
 });
 
-// Side navigation
+// Side navigation functions
 const openNav = () => {
     let side = document.getElementById("mySidenav");
     let toggle = document.querySelector(".toggle");
@@ -191,13 +192,17 @@ const openNav = () => {
     document.querySelector(".closebtn").style.display = "block";
 }
 
-const closeNav = () => {
-    var side = document.getElementById("mySidenav");
-    var toggle = document.querySelector(".toggle");
-    side.style.width = "0";
-    toggle.style.display = "flex";
-    document.querySelector(".closebtn").style.display = "none";
+// MODIFIEZ cette fonction pour NE PAS fermer automatiquement
+const closeNav = (delay = 0) => {
+    setTimeout(() => {
+        var side = document.getElementById("mySidenav");
+        var toggle = document.querySelector(".toggle");
+        side.style.width = "0";
+        toggle.style.display = "flex";
+        document.querySelector(".closebtn").style.display = "none";
+    }, delay);
 }
+
 
 // Cursor
 let cursor = document.querySelector('.cursor');
