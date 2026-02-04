@@ -22,36 +22,44 @@ $(document).ready(function () {
     }, 2500);
 });
 
-
 var tabs = document.getElementById('icetab-container').children;
 var tabs2 = document.getElementById('icetab-container2').children;
 var tabcontents = document.getElementById('icetab-content').children;
 
+function syncActiveTabs(activeIndex) {
+    for (var i = 0; i < tabs.length; i++) {
+        tabs[i].className = 'icetab';
+        tabs2[i].className = 'icetab';
+    }
+    
+    if (tabs[activeIndex]) tabs[activeIndex].classList.add('current-tab');
+    if (tabs2[activeIndex]) tabs2[activeIndex].classList.add('current-tab');
+}
+
 var mybtn = function () {
     var tabchange = this.mynum;
+    
+    // Mettre à jour le contenu
     for (var int = 0; int < tabcontents.length; int++) {
         tabcontents[int].className = 'tabcontent';
-
-        if (tabs[int].className = 'icetab') {
-            tabs[int].className = 'icetab';
-            this.classList.add('current-tab');
-            tabcontents[int].className = 'tabcontent'
-            tabcontents[tabchange].classList.add('tab-active');
-        }
+        tabcontents[tabchange].classList.add('tab-active');
     }
+    
+    // Synchroniser les menus
+    syncActiveTabs(tabchange);
 }
 
 var mybtn2 = function () {
     var tabchange = this.mynum;
+    
+    // Mettre à jour le contenu
     for (var int = 0; int < tabcontents.length; int++) {
         tabcontents[int].className = 'tabcontent';
-        if (tabs2[int].className = 'icetab') {
-            tabs2[int].className = 'icetab';
-            this.classList.add('current-tab');
-            tabcontents[int].className = 'tabcontent'
-            tabcontents[tabchange].classList.add('tab-active');
-        }
+        tabcontents[tabchange].classList.add('tab-active');
     }
+    
+    // Synchroniser les menus
+    syncActiveTabs(tabchange);
 }
 
 for (var index = 0; index < tabs.length; index++) {
@@ -64,15 +72,24 @@ for (var index = 0; index < tabs2.length; index++) {
     tabs2[index].addEventListener('click', mybtn2, false);
 }
 
+// Portfolio click from home
 const elements = document.getElementById("portfolio");
 const homeNavabr = document.getElementById("home");
 const circular_imgClick = document.getElementsByClassName("circular_text_main");
 
-circular_imgClick[0].addEventListener("click", () => {
-    homeNavabr.classList.remove("tab-active");
-    elements.classList.add("tab-active");
-});
-
+if (circular_imgClick.length > 0) {
+    circular_imgClick[0].addEventListener("click", () => {
+        // Mettre à jour le contenu
+        for (var int = 0; int < tabcontents.length; int++) {
+            tabcontents[int].className = 'tabcontent';
+        }
+        homeNavabr.classList.remove("tab-active");
+        elements.classList.add("tab-active");
+        
+        // Synchroniser les menus (portfolio est l'index 5)
+        syncActiveTabs(5);
+    });
+}
 
 // Portfolio Pop-up
 $(".pop-up").on("click", function () {
@@ -82,7 +99,6 @@ $(".pop-up").on("click", function () {
 $("#close").on("click", function () {
     $(".overlay").removeClass("is-on");
 });
-// Portfolio Pop-up end
 
 // Share Btn
 $(document).ready(function () {
@@ -93,7 +109,6 @@ $(document).ready(function () {
         $(this).next(".networks-5").toggleClass("active");
     });
 });
-// Share Btn End
 
 // Testimonial Card Slider
 $(function () {
@@ -114,7 +129,6 @@ $(function () {
             $('.current').text(nextSlide + 1);
         });
 });
-// Testimonial Card Slider End
 
 // View More View Less btn
 $(document).ready(function () {
@@ -129,7 +143,6 @@ $(document).ready(function () {
         }
     });
 });
-// View More View Less btn End
 
 // blog Page Pop Up
 $(document).ready(function () {
@@ -139,7 +152,6 @@ $(document).ready(function () {
         return false;
     });
 });
-// blog Page Pop Up End
 
 // blog_pop_up_slider
 $(function () {
@@ -164,7 +176,6 @@ $(function () {
         ]
     });
 });
-// blog_pop_up_slider end
 
 // form
 $('input').focus(function () {
@@ -177,7 +188,8 @@ $('input').focus(function () {
         }
     })
 });
-// form end
+
+// Side navigation
 const openNav = () => {
     let side = document.getElementById("mySidenav");
     let toggle = document.querySelector(".toggle");
@@ -194,42 +206,45 @@ const closeNav = () => {
     document.querySelector(".closebtn").style.display = "none";
 }
 
-// cursor
+// Cursor
 let cursor = document.querySelector('.cursor');
 let cursorScale = document.querySelectorAll('a,button,.pop-up,.trigger,.share,#close,.toggle,#vimeo,#youtube,.link,.gallery');
 let mouseX = 0;
 let mouseY = 0;
 
-gsap.to({}, 0.016, {
-    repeat: -1,
-    onRepeat: function () {
-        gsap.set(cursor, {
-            css: {
-                left: mouseX,
-                top: mouseY,
-            }
-        })
-    }
-});
-
-window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-})
-cursorScale.forEach(link => {
-    link.addEventListener('mousemove', () => {
-        cursor.classList.add('grow');
-        if (link.classList.contains('small')) {
-            cursor.classList.remove('grow');
-            cursor.classList.add('grow-small');
+if (cursor) {
+    gsap.to({}, 0.016, {
+        repeat: -1,
+        onRepeat: function () {
+            gsap.set(cursor, {
+                css: {
+                    left: mouseX,
+                    top: mouseY,
+                }
+            })
         }
     });
 
-    link.addEventListener('mouseleave', () => {
-        cursor.classList.remove('grow');
-        cursor.classList.remove('grow-small');
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
     });
-});
+    
+    cursorScale.forEach(link => {
+        link.addEventListener('mousemove', () => {
+            cursor.classList.add('grow');
+            if (link.classList.contains('small')) {
+                cursor.classList.remove('grow');
+                cursor.classList.add('grow-small');
+            }
+        });
+
+        link.addEventListener('mouseleave', () => {
+            cursor.classList.remove('grow');
+            cursor.classList.remove('grow-small');
+        });
+    });
+}
 
 // Whole Page Scrolling Animation
 const observer = new IntersectionObserver((entries) => {
@@ -244,68 +259,33 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.fade_up');
 hiddenElements.forEach((el) => observer.observe(el));
 
-
-
-// gallary code
+// Gallery code
 window.addEventListener("load", () => {
     for (let i of document.querySelectorAll(".gallery img")) {
         i.onclick = () => i.classList.toggle("full");
     }
 });
 
-// skill bar function
+// Skill bar function
 $(function () {
     $('.circlechart').circlechart();
 });
 
-
-// Synchronisation de l'état actif entre sidebar et sidenav
-function syncActiveTab() {
-    // Récupérer l'onglet actif du contenu principal
+document.addEventListener('DOMContentLoaded', function() {
     const activeTab = document.querySelector('.tabcontent.tab-active');
-    if (!activeTab) return;
-    
-    const activeId = activeTab.id;
-    
-    // Trouver l'onglet correspondant dans le sidebar (closed)
-    const sidebarTabs = document.querySelectorAll('#icetab-container .icetab');
-    const sidenavTabs = document.querySelectorAll('#icetab-container2 .icetab');
-    
-    // Retirer la classe current-tab de tous
-    sidebarTabs.forEach(tab => tab.classList.remove('current-tab'));
-    sidenavTabs.forEach(tab => tab.classList.remove('current-tab'));
-    
-    // Ajouter current-tab aux onglets correspondants
-    let targetIndex = -1;
-    
-    // Trouver l'index en fonction de l'ID
-    const tabContents = document.querySelectorAll('.tabcontent');
-    tabContents.forEach((tab, index) => {
-        if (tab.id === activeId) {
-            targetIndex = index;
+    if (activeTab) {
+        const tabContents = document.querySelectorAll('.tabcontent');
+        let activeIndex = -1;
+        
+        for (let i = 0; i < tabContents.length; i++) {
+            if (tabContents[i] === activeTab) {
+                activeIndex = i;
+                break;
+            }
         }
-    });
-    
-    // Appliquer l'état actif si l'index est trouvé
-    if (targetIndex !== -1 && sidebarTabs[targetIndex]) {
-        sidebarTabs[targetIndex].classList.add('current-tab');
+        
+        if (activeIndex !== -1) {
+            syncActiveTabs(activeIndex);
+        }
     }
-    
-    if (targetIndex !== -1 && sidenavTabs[targetIndex]) {
-        sidenavTabs[targetIndex].classList.add('current-tab');
-    }
-}
-
-// Appeler la fonction au chargement
-document.addEventListener('DOMContentLoaded', syncActiveTab);
-
-// Mettre à jour l'état actif après chaque clic
-document.querySelectorAll('.icetab').forEach(tab => {
-    tab.addEventListener('click', function() {
-        // Attendre un court instant pour que le contenu change
-        setTimeout(syncActiveTab, 50);
-    });
 });
-
-// Observer les changements d'URL (pour le scrolling avec ancres si présent)
-window.addEventListener('hashchange', syncActiveTab);
