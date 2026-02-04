@@ -16,26 +16,12 @@
     <link rel="icon" type="image/x-icon" href="./assets/images/autre.png">
 
     <!-- CSS LINKS -->
-    
-    
-    
-    
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/boostrap.min.css">
+    <link rel="stylesheet" href="./assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-
-    <!-- CSS Bundle (optimisé) -->
-    <link rel="stylesheet" href="./assets/css/bundle.min.css">
-    <link rel="stylesheet" href="./assets/css/fonts.min.css">
-    
-    <!-- Preload critical fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400&display=swap"></noscript>
-    
-    <!-- Performance optimizations -->
-    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    </head>
+</head>
 
 <body>
     <!-- ====================================== Preloader ===================================== -->
@@ -93,8 +79,7 @@
             <ul class="nav-links icetab-container" id="icetab-container">
                 <li class="icetab current-tab">
                     <a class="nav_menu_icon_line" href="javascript:void(0)">
-                        <img class="nav_menu_icon" src="./assets/images/svg/home.svg" alt="home_icon"
-                            data-key-alt="navigation.alt.home" loading="lazy">
+                        <img class="nav_menu_icon" src="./assets/images/svg/home.svg" alt="home_icon" data-key-alt="navigation.alt.home">
                     </a>
                     <ul class="sub-menu blank">
                         <li class="">
@@ -104,8 +89,7 @@
                 </li>
                 <li class="icetab menu-btn">
                     <a class="nav_menu_icon_line" href="javascript:void(0)">
-                        <img class="nav_menu_icon" src="./assets/images/svg/about.svg" alt="about_icon"
-                            data-key-alt="navigation.alt.about" loading="lazy">
+                        <img class="nav_menu_icon" src="./assets/images/svg/about.svg" alt="about_icon" data-key-alt="navigation.alt.about">
                     </a>
                     <ul class="sub-menu">
                         <li>
@@ -115,8 +99,7 @@
                 </li>
                 <li class="icetab">
                     <a class="nav_menu_icon_line" href="javascript:void(0)">
-                        <img class="nav_menu_icon" src="./assets/images/svg/resume.svg" alt="resume_icon"
-                            data-key-alt="navigation.alt.resume" loading="lazy">
+                        <img class="nav_menu_icon" src="./assets/images/svg/resume.svg" alt="resume_icon" data-key-alt="navigation.alt.resume">
                     </a>
                     <ul class="sub-menu">
                         <li>
@@ -126,8 +109,7 @@
                 </li>
                 <li class="icetab">
                     <a class="nav_menu_icon_line" href="javascript:void(0)">
-                        <img class="nav_menu_icon" src="./assets/images/svg/services.svg" alt="services_icon"
-                            data-key-alt="navigation.alt.services" loading="lazy">
+                        <img class="nav_menu_icon" src="./assets/images/svg/services.svg" alt="services_icon" data-key-alt="navigation.alt.services">
                     </a>
                     <ul class="sub-menu">
                         <li>
@@ -137,8 +119,7 @@
                 </li>
                 <li class="icetab">
                     <a class="nav_menu_icon_line" href="javascript:void(0)">
-                        <img class="nav_menu_icon" src="./assets/images/svg/skills.svg" alt="skills_icon"
-                            data-key-alt="navigation.alt.skills" loading="lazy">
+                        <img class="nav_menu_icon" src="./assets/images/svg/skills.svg" alt="skills_icon" data-key-alt="navigation.alt.skills">
                     </a>
                     <ul class="sub-menu blank">
                         <li>
@@ -148,8 +129,7 @@
                 </li>
                 <li class="icetab">
                     <a class="nav_menu_icon_line" href="javascript:void(0)">
-                        <img class="nav_menu_icon" src="./assets/images/svg/portfolio.svg" alt="portfolio_icon"
-                            data-key-alt="navigation.alt.portfolio" loading="lazy">
+                        <img class="nav_menu_icon" src="./assets/images/svg/portfolio.svg" alt="portfolio_icon" data-key-alt="navigation.alt.portfolio">
                     </a>
                     <ul class="sub-menu blank">
                         <li>
@@ -159,8 +139,7 @@
                 </li>
                 <li class="icetab">
                     <a class="" href="javascript:void(0)">
-                        <img class="nav_menu_icon" src="./assets/images/svg/contact.svg" alt="contact_icon"
-                            data-key-alt="navigation.alt.contact" loading="lazy">
+                        <img class="nav_menu_icon" src="./assets/images/svg/contact.svg" alt="contact_icon" data-key-alt="navigation.alt.contact">
                     </a>
                     <ul class="sub-menu blank">
                         <li>
@@ -174,8 +153,7 @@
 
         <!-- ======================================= Side Menu ================================== -->
         <div class="toggle" onclick="openNav()">
-            <img class="line-menu" src="./assets/images/line-menu.png" alt="line-menu"
-                data-key-alt="navigation.alt.menu" loading="lazy">
+            <img class="line-menu" src="./assets/images/line-menu.png" alt="line-menu" data-key-alt="navigation.alt.menu">
         </div>
         <div id="mySidenav" class="sidenav">
             <div class="closebtn close-icon" onclick="closeNav()">&times;</div>
@@ -186,57 +164,53 @@
             <ul class="sidescreen_sub icetab-container" id="icetab-container2">
                 <li class="icetab current-tab" onclick="openNav()">
                     <a class="icons2" href="javascript:void(0)">
-                        <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/home.svg" alt="home_icon"
-                            data-key-alt="navigation.alt.home" loading="lazy">
+                        <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/home.svg"
+                            alt="home_icon" data-key-alt="navigation.alt.home">
                         <span data-key="navigation.home">Accueil</span>
                     </a>
                 </li>
                 <li class="icetab" onclick="openNav()">
                     <a class="icons2" href="javascript:void(0)">
-                        <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/about.svg" alt="about_icon"
-                            data-key-alt="navigation.alt.about" loading="lazy">
+                        <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/about.svg" alt="about_icon" data-key-alt="navigation.alt.about">
                         <span data-key="navigation.about">À propos</span>
                     </a>
                 </li>
                 <li class="icetab" onclick="openNav()">
                     <a class="icons2" href="javascript:void(0)">
-                        <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/resume.svg" alt="resume_icon"
-                            data-key-alt="navigation.alt.resume" loading="lazy">
+                        <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/resume.svg" alt="resume_icon" data-key-alt="navigation.alt.resume">
                         <span data-key="navigation.resume">cv</span>
                     </a>
                 </li>
                 <li class="icetab" onclick="openNav()">
                     <a class="icons2" href="javascript:void(0)">
                         <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/services.svg"
-                            alt="services_icon.svg" data-key-alt="navigation.alt.services" loading="lazy">
+                            alt="services_icon.svg" data-key-alt="navigation.alt.services">
                         <span data-key="navigation.services">Services</span>
                     </a>
                 </li>
                 <li class="icetab" onclick="openNav()">
                     <a class="icons2" href="javascript:void(0)">
-                        <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/skills.svg" alt="skills_icon"
-                            data-key-alt="navigation.alt.skills" loading="lazy">
+                        <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/skills.svg" alt="skills_icon" data-key-alt="navigation.alt.skills">
                         <span data-key="navigation.skill">Compétences</span>
                     </a>
                 </li>
                 <li class="icetab" onclick="openNav()">
                     <a class="icons2" href="javascript:void(0)">
                         <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/portfolio.svg"
-                            alt="portfolio_icon" data-key-alt="navigation.alt.portfolio" loading="lazy">
+                            alt="portfolio_icon" data-key-alt="navigation.alt.portfolio">
                         <span data-key="navigation.portfolio">Portfolio</span>
                     </a>
                 </li>
                 <li class="icetab" onclick="openNav()">
                     <a class="icons2" href="javascript:void(0)">
-                        <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/contact.svg" alt="contact_icon"
-                            data-key-alt="navigation.alt.contact" loading="lazy">
+                        <img class="nav_menu_icon sidenav_img" src="./assets/images/svg/contact.svg" alt="contact_icon" data-key-alt="navigation.alt.contact">
                         <span data-key="navigation.contact">Contact</span>
                     </a>
                 </li>
             </ul>
         </div>
         <!-- ======================================= Side Menu End ================================== -->
-
+         
     </header>
     <div class="all_page" id="page">
         <section class="card_section" id="card_main">
@@ -245,8 +219,7 @@
                 </div>
                 <div class="bio_contain">
                     <h1 class="" data-key="home.full_name">Gaël RAMAHANDRISOA</h1>
-                    <h2 class="designer font_w_font_s1 overflow-hidden" data-key="home.job_title">Développeur Web,
-                        Spécialiste IA</h2>
+                    <h2 class="designer font_w_font_s1 overflow-hidden" data-key="home.job_title">Développeur Web, Spécialiste IA</h2>
                     <button class="download_cv hire_me font_w_font_s">
                         <i class="ri-at-line"></i>
                         <span data-key="home.hire_me_button">Recrutez-moi</span>
@@ -323,7 +296,7 @@
                         Passionné par les technologies numériques et l'intelligence artificielle, je poursuis
                         actuellement un cursus en informatique. Voici le détail de mon parcours académique
                     </h3>
-
+                    
                     <div class="education position-relative education_space">
                         <div class="side_circle_ring fade_up">
                             <div class="small_yellow_border">
@@ -391,7 +364,7 @@
                         À travers différents projets académiques et personnels, j'ai pu mettre en pratique mes
                         compétences techniques et développer des solutions concrètes.
                     </h3>
-
+                    
                     <div class="education position-relative education_space">
                         <div class="side_circle_ring fade_up">
                             <div class="small_yellow_border">
@@ -408,8 +381,7 @@
                                         Association FIZANAKARA / Actuellement
                                     </h4>
                                 </div>
-                                <img class="company_logo" src="./assets/images/webp/dev.webp" alt="dev"
-                                    data-key-alt="resume.alt.dev" loading="lazy">
+                                <img class="company_logo" src="./assets/images/webp/dev.webp" alt="dev" data-key-alt="resume.alt.dev">
                             </div>
                             <h5 class="cursus font_w_font_s1" data-key="resume.jobs.0.description">
                                 Mon rôle consiste à faire évoluer le site web de l'association et à imaginer des
@@ -437,8 +409,7 @@
                     <div class="services_box_main">
 
                         <div class="service_box fade_up">
-                            <img class="services_icon" src="./assets/images/webp/ux.webp" alt="ux"
-                                data-key-alt="services.alt.ux" loading="lazy">
+                            <img class="services_icon" src="./assets/images/webp/ux.webp" alt="ux" data-key-alt="services.alt.ux">
                             <h3 class="ui_ux font_w_font_s" data-key="services.services.0.title">
                                 UX/UI Design
                             </h3>
@@ -449,8 +420,7 @@
                         </div>
 
                         <div class="service_box fade_up">
-                            <img class="services_icon" src="./assets/images/webp/prompt.webp" alt="android"
-                                data-key-alt="services.alt.prompt" loading="lazy">
+                            <img class="services_icon" src="./assets/images/webp/prompt.webp" alt="android" data-key-alt="services.alt.prompt">
                             <h3 class="ui_ux font_w_font_s" data-key="services.services.1.title">
                                 Design de prompts
                             </h3>
@@ -460,8 +430,7 @@
                         </div>
 
                         <div class="service_box fade_up">
-                            <img class="services_icon" src="./assets/images/webp/dev.webp" alt="web"
-                                data-key-alt="services.alt.web" loading="lazy">
+                            <img class="services_icon" src="./assets/images/webp/dev.webp" alt="web" data-key-alt="services.alt.web">
                             <h3 class="ui_ux font_w_font_s" data-key="services.services.2.title">
                                 Développement web
                             </h3>
@@ -471,8 +440,7 @@
                         </div>
 
                         <div class="service_box fade_up">
-                            <img class="services_icon" src="./assets/images/webp/marketing.webp" alt="marketing"
-                                data-key-alt="services.alt.marketing" loading="lazy">
+                            <img class="services_icon" src="./assets/images/webp/marketing.webp" alt="marketing" data-key-alt="services.alt.marketing">
                             <h3 class="ui_ux font_w_font_s" data-key="services.services.3.title">
                                 SEO & Marketing
                             </h3>
@@ -522,8 +490,7 @@
 
                         <div class="skill_circle fade_up">
                             <div class="hard_skill_group">
-                                <img class="figma" src="./assets/images/webp/java.webp" alt="java"
-                                    data-key-alt="skill.alt.java" loading="lazy">
+                                <img class="figma" src="./assets/images/webp/java.webp" alt="java" data-key-alt="skill.alt.java">
                                 <h4 class="hard_skill_counter font_w_font_s1" data-key="skill.technologies.0.perce
                                 ntage">60%</h4>
                             </div>
@@ -534,10 +501,8 @@
 
                         <div class="skill_circle fade_up">
                             <div class="hard_skill_group">
-                                <img class="figma" src="./assets/images/webp/javascript.webp" alt="javascript"
-                                    data-key-alt="skill.alt.javascript" loading="lazy">
-                                <h4 class="hard_skill_counter font_w_font_s1"
-                                    data-key="skill.technologies.1.percentage">
+                                <img class="figma" src="./assets/images/webp/javascript.webp" alt="javascript" data-key-alt="skill.alt.javascript">
+                                <h4 class="hard_skill_counter font_w_font_s1" data-key="skill.technologies.1.percentage">
                                     70%
                                 </h4>
                             </div>
@@ -548,10 +513,8 @@
 
                         <div class="skill_circle fade_up">
                             <div class="hard_skill_group">
-                                <img class="figma" src="./assets/images/webp/postgresql.webp" alt="postgresql"
-                                    data-key-alt="skill.alt.postgresql" loading="lazy">
-                                <h4 class="hard_skill_counter font_w_font_s1"
-                                    data-key="skill.technologies.2.percentage">
+                                <img class="figma" src="./assets/images/webp/postgresql.webp" alt="postgresql" data-key-alt="skill.alt.postgresql">
+                                <h4 class="hard_skill_counter font_w_font_s1" data-key="skill.technologies.2.percentage">
                                     80%
                                 </h4>
                             </div>
@@ -562,10 +525,8 @@
 
                         <div class="skill_circle fade_up">
                             <div class="hard_skill_group">
-                                <img class="figma" src="./assets/images/webp/react.webp" alt="react"
-                                    data-key-alt="skill.alt.react" loading="lazy">
-                                <h4 class="hard_skill_counter font_w_font_s1"
-                                    data-key="skill.technologies.3.percentage">
+                                <img class="figma" src="./assets/images/webp/react.webp" alt="react" data-key-alt="skill.alt.react">
+                                <h4 class="hard_skill_counter font_w_font_s1" data-key="skill.technologies.3.percentage">
                                     70%
                                 </h4>
                             </div>
@@ -576,10 +537,8 @@
 
                         <div class="skill_circle fade_up">
                             <div class="hard_skill_group">
-                                <img class="figma" src="./assets/images/webp/tailwind.webp" alt="tailwind"
-                                    data-key-alt="skill.alt.tailwind" loading="lazy">
-                                <h4 class="hard_skill_counter font_w_font_s1"
-                                    data-key="skill.technologies.4.percentage">
+                                <img class="figma" src="./assets/images/webp/tailwind.webp" alt="tailwind" data-key-alt="skill.alt.tailwind">
+                                <h4 class="hard_skill_counter font_w_font_s1" data-key="skill.technologies.4.percentage">
                                     77%
                                 </h4>
                             </div>
@@ -590,10 +549,8 @@
 
                         <div class="skill_circle fade_up">
                             <div class="hard_skill_group">
-                                <img class="figma" src="./assets/images/webp/web.webp" alt="html and css"
-                                    data-key-alt="skill.alt.htmlcss" loading="lazy">
-                                <h4 class="hard_skill_counter font_w_font_s1"
-                                    data-key="skill.technologies.5.percentage">94%</h4>
+                                <img class="figma" src="./assets/images/webp/web.webp" alt="html and css" data-key-alt="skill.alt.htmlcss">
+                                <h4 class="hard_skill_counter font_w_font_s1" data-key="skill.technologies.5.percentage">94%</h4>
                             </div>
                             <h4 class="subject font_w_font_s1" data-key="skill.technologies.5.name">
                                 HTML & CSS
@@ -602,10 +559,8 @@
 
                         <div class="skill_circle fade_up">
                             <div class="hard_skill_group">
-                                <img class="figma" src="./assets/images/webp/figma.webp" alt="figma"
-                                    data-key-alt="skill.alt.figma" loading="lazy">
-                                <h4 class="hard_skill_counter font_w_font_s1"
-                                    data-key="skill.technologies.6.percentage">
+                                <img class="figma" src="./assets/images/webp/figma.webp" alt="figma" data-key-alt="skill.alt.figma">
+                                <h4 class="hard_skill_counter font_w_font_s1" data-key="skill.technologies.6.percentage">
                                     89%
                                 </h4>
                             </div>
@@ -616,10 +571,8 @@
 
                         <div class="skill_circle fade_up">
                             <div class="hard_skill_group">
-                                <img class="figma" src="./assets/images/webp/linux.webp" alt="linux"
-                                    data-key-alt="skill.alt.linux" loading="lazy">
-                                <h4 class="hard_skill_counter font_w_font_s1"
-                                    data-key="skill.technologies.7.percentage">
+                                <img class="figma" src="./assets/images/webp/linux.webp" alt="linux" data-key-alt="skill.alt.linux">
+                                <h4 class="hard_skill_counter font_w_font_s1" data-key="skill.technologies.7.percentage">
                                     85%
                                 </h4>
                             </div>
@@ -651,12 +604,12 @@
                                 <div class="content_portfolio">
                                     <a href="https://ecrivia.onrender.com">
                                         <div class="content-overlay"></div>
-
-                                        <picture>
-                                            <source srcset=" ./assets/images/webp/ecrivia.webp"" type="image/webp">
-                                            <source srcset=" ./assets/images/ecrivia.png"" type="image/png">
-                                            <img class="content-image" src="./assets/images/ecrivia.png" alt="food_app" data-key-alt="portfolio.alt.ecrivia" loading="lazy" loading="lazy">
-                                        </picture>
+                                        
+<picture>
+    <source srcset="src="./assets/images/webp/ecrivia.webp"" type="image/webp">
+    <source srcset="src="./assets/images/ecrivia.png"" type="image/png">
+    <img src="./assets/images/ecrivia.png" alt="" loading="lazy">
+</picture>
                                         <div class="content-details fadeIn-bottom">
                                             <h3 class="content-title" data-key="portfolio.projects.0.name">
                                                 Ecrivia
@@ -678,12 +631,12 @@
                             <div class="">
                                 <div class="content_portfolio pop-up">
                                     <div class="content-overlay"></div>
-
-                                    <picture>
-                                        <source srcset=" ./assets/images/webp/planifieo4.webp"" type="image/webp">
-                                        <source srcset=" ./assets/images/planifieo4.png"" type="image/png">
-                                        <img class="content-image" src="./assets/images/planifieo4.png" alt="planifieo4" data-key-alt="portfolio.alt.planifieo" loading="lazy" loading="lazy">
-                                    </picture>
+                                    
+<picture>
+    <source srcset="src="./assets/images/webp/planifieo4.webp"" type="image/webp">
+    <source srcset="src="./assets/images/planifieo4.png"" type="image/png">
+    <img src="./assets/images/planifieo4.png" alt="" loading="lazy">
+</picture>
                                     <div class="content-details fadeIn-bottom">
                                         <h3 class="content-title" data-key="portfolio.projects.1.name">
                                             Planifieo
@@ -693,10 +646,8 @@
                                         </p>
                                     </div>
                                 </div>
-                                <h4 class="project_name font_w_font_s" data-key="portfolio.projects.1.name">Planifieo
-                                </h4>
-                                <p class="project_name_sub font_w_font_s1" data-key="portfolio.projects.1.type">Web
-                                    application</p>
+                                <h4 class="project_name font_w_font_s" data-key="portfolio.projects.1.name">Planifieo</h4>
+                                <p class="project_name_sub font_w_font_s1" data-key="portfolio.projects.1.type">Web application</p>
                             </div>
 
                         </div>
@@ -706,12 +657,12 @@
                                 <a href="#popup1">
                                     <div class="content_portfolio">
                                         <div class="content-overlay"></div>
-
-                                        <picture>
-                                            <source srcset=" ./assets/images/webp/coca.webp"" type="image/webp">
-                                            <source srcset=" ./assets/images/coca.jpeg"" type="image/jpeg">
-                                            <img class="content-image" src="./assets/images/coca.jpeg" alt="city_3Dview" data-key-alt="portfolio.alt.generative" loading="lazy" loading="lazy">
-                                        </picture>
+                                        
+<picture>
+    <source srcset="src="./assets/images/webp/coca.webp"" type="image/webp">
+    <source srcset="src="./assets/images/coca.jpeg"" type="image/jpeg">
+    <img src="./assets/images/coca.jpeg" alt="" loading="lazy">
+</picture>
                                         <div class="content-details fadeIn-bottom">
                                             <h3 class="content-title" data-key="portfolio.projects.2.name">
                                                 Vision Générative
@@ -733,12 +684,12 @@
                             <div class="fade_up">
                                 <div class="content_portfolio">
                                     <div class="content-overlay"></div>
-
-                                    <picture>
-                                        <source srcset=" ./assets/images/webp/fizanakara.webp"" type="image/webp">
-                                        <source srcset=" ./assets/images/fizanakara.png"" type="image/png">
-                                        <img class="content-image" src="./assets/images/fizanakara.png" alt="content_img" data-key-alt="portfolio.alt.fizanakara" loading="lazy" loading="lazy">
-                                    </picture>
+                                        
+<picture>
+    <source srcset="src="./assets/images/webp/fizanakara.webp"" type="image/webp">
+    <source srcset="src="./assets/images/fizanakara.png"" type="image/png">
+    <img src="./assets/images/fizanakara.png" alt="" loading="lazy">
+</picture>
                                     <div class="content-details fadeIn-bottom">
                                         <h3 class="content-title" data-key="portfolio.projects.3.name">
                                             FIZANAKARA COTISATION
@@ -776,8 +727,7 @@
                             <label for="name" class="form__label" data-key="contact.form.name">
                                 Quel est votre nom*
                             </label>
-                            <input type="text" class="form__input" placeholder="" id="name" required autocomplete="off"
-                                data-key-placeholder="contact.placeholders.name">
+                            <input type="text" class="form__input" placeholder="" id="name" required autocomplete="off" data-key-placeholder="contact.placeholders.name">
                         </div>
                         <div class="form form__2">
                             <label for="email" class="form__label" data-key="contact.form.email">
@@ -790,8 +740,7 @@
                             <label for="phone" class="form__label" data-key="contact.form.phone">
                                 Votre numéro de téléphone*
                             </label>
-                            <input type="tel" class="form__input" placeholder="" id="phone" required autocomplete="off"
-                                data-key-placeholder="contact.placeholders.phone">
+                            <input type="tel" class="form__input" placeholder="" id="phone" required autocomplete="off" data-key-placeholder="contact.placeholders.phone">
                         </div>
                         <div class="form form__1">
                             <label for="subject" class="form__label" data-key="contact.form.subject">
@@ -806,8 +755,7 @@
                             <label for="project" class="form__label" data-key="contact.form.project">
                                 Décrivez votre projet
                             </label>
-                            <input type="text" class="form__input message2" placeholder="" id="project" required
-                                data-key-placeholder="contact.placeholders.project">
+                            <input type="text" class="form__input message2" placeholder="" id="project" required data-key-placeholder="contact.placeholders.project">
                         </div>
                         <div class="send_message_form">
                             <button class="download_cv submit form__btn">
@@ -821,8 +769,7 @@
                             Prenez contact !
                         </h3>
                         <div class="contact_number_main">
-                            <img src="./assets/images/svg/contact(1).svg" class="nav_menu_icon_contact" alt="contact"
-                                data-key-alt="contact.alt.phone" loading="lazy">
+                            <img src="./assets/images/svg/contact(1).svg" class="nav_menu_icon_contact" alt="contact" data-key-alt="contact.alt.phone">
                             <h4 class="contact_number">
                                 <a href="tel:+261389682194" data-key="contact.contact_info.phone">
                                     +261 38 96 821 94
@@ -830,8 +777,7 @@
                             </h4>
                         </div>
                         <div class="contact_number_main">
-                            <img src="./assets/images/svg/gmail(1).svg" class="nav_menu_icon_contact" alt="gmail"
-                                data-key-alt="contact.alt.email" loading="lazy">
+                            <img src="./assets/images/svg/gmail(1).svg" class="nav_menu_icon_contact" alt="gmail" data-key-alt="contact.alt.email">
                             <h4 class="contact_number">
                                 <a href="mailto:gael.ramahandrisoa@gmail.com" data-key="contact.contact_info.email">
                                     gael.ramahandrisoa@gmail.com
@@ -839,18 +785,16 @@
                             </h4>
                         </div>
                         <div class="contact_number_main">
-                            <img src="./assets/images/svg/map(1).svg" class="nav_menu_icon_contact" alt="map"
-                                data-key-alt="contact.alt.location" loading="lazy">
+                            <img src="./assets/images/svg/map(1).svg" class="nav_menu_icon_contact" alt="map" data-key-alt="contact.alt.location">
                             <h4 class="contact_number" data-key="contact.contact_info.location">
                                 Antananarivo, Madagascar
                             </h4>
                         </div>
                     </div>
                     <iframe
-                        src="about:blank" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.1836362832874!2d47.5135893!3d-18.8619098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21f081278e0f1921%3A0x7d62e74a2e5f0267!2sFJKM%20Isoavimasoandro%20Fihavaozana!5e0!3m2!1sfr!2smg!4v1680000000000!5m2!1sfr!2smg"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.1836362832874!2d47.5135893!3d-18.8619098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21f081278e0f1921%3A0x7d62e74a2e5f0267!2sFJKM%20Isoavimasoandro%20Fihavaozana!5e0!3m2!1sfr!2smg!4v1680000000000!5m2!1sfr!2smg"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation"
-                        data-key-title="contact.alt.map" loading="lazy">
+                        referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation" data-key-title="contact.alt.map">
                     </iframe>
                     <h5 class="copyright" data-key="contact.copyright">
                         © nassaigael 2026. Tous droits réservés by
@@ -880,12 +824,12 @@
                 <div id="close">
                     <i class="ri-close-fill"></i>
                 </div>
-
-                <picture>
-                    <source srcset=" ./assets/images/webp/planifieo4.webp"" type="image/webp">
-                    <source srcset=" ./assets/images/planifieo4.png"" type="image/png">
-                    <img class="pop-up-video" src="./assets/images/planifieo4.png" alt="planifieo4" data-key-alt="modal.alt.planifieo" loading="lazy" loading="lazy">
-                </picture>
+                
+<picture>
+    <source srcset="src="./assets/images/webp/planifieo4.webp"" type="image/webp">
+    <source srcset="src="./assets/images/planifieo4.png"" type="image/png">
+    <img src="./assets/images/planifieo4.png" alt="" loading="lazy">
+</picture>
                 <div class="corporate_main">
                     <div class="corporate_sub">
                         <h3 class="project_name corp font_w_font_s" data-key="modal.projects.planifieo.name">Planifieo
@@ -916,12 +860,10 @@
                 </p>
                 <div class="project_second">
                     <div>
-                        <img class="project_sub_images" src="./assets/images/planifieo3.png" alt="planifieo3"
-                            data-key-alt="modal.alt.planifieo3" loading="lazy">
+                        <img class="project_sub_images" src="./assets/images/planifieo3.png" alt="planifieo3" data-key-alt="modal.alt.planifieo3">
                     </div>
                     <div>
-                        <img class="project_sub_images" src="./assets/images/planifieo1.png" alt="planifieo1"
-                            data-key-alt="modal.alt.planifieo1" loading="lazy">
+                        <img class="project_sub_images" src="./assets/images/planifieo1.png" alt="planifieo1" data-key-alt="modal.alt.planifieo1">
                     </div>
                 </div>
                 <div class="pop-up-footer">
@@ -957,88 +899,70 @@
             <a class="close" href="#">&times;</a>
             <div id="cbwrap">
                 <div class="gallery">
-
-                    <picture>
-                        <source srcset=" ./assets/images/webp/gallery1.webp"" type="image/webp">
-                        <source srcset=" ./assets/images/gallery1.jpeg"" type="image/jpeg">
-                        <img src="./assets/images/gallery1.jpeg" alt="" loading="lazy" loading="lazy">
-                    </picture>
-
-                    <picture>
-                        <source srcset=" ./assets/images/webp/gallery4.webp"" type="image/webp">
-                        <source srcset=" ./assets/images/gallery4.jpeg"" type="image/jpeg">
-                        <img src="./assets/images/gallery4.jpeg" alt="" loading="lazy" loading="lazy">
-                    </picture>
-
-                    <picture>
-                        <source srcset=" ./assets/images/webp/gallery5.webp"" type="image/webp">
-                        <source srcset=" ./assets/images/gallery5.jpeg"" type="image/jpeg">
-                        <img src="./assets/images/gallery5.jpeg" alt="" loading="lazy" loading="lazy">
-                    </picture>
-
-                    <picture>
-                        <source srcset=" ./assets/images/webp/gallery7.webp"" type="image/webp">
-                        <source srcset=" ./assets/images/gallery7.jpeg"" type="image/jpeg">
-                        <img src="./assets/images/gallery7.jpeg" alt="" loading="lazy" loading="lazy">
-                    </picture>
-
-                    <picture>
-                        <source srcset=" ./assets/images/webp/gallery6.webp"" type="image/webp">
-                        <source srcset=" ./assets/images/gallery6.jpeg"" type="image/jpeg">
-                        <img src="./assets/images/gallery6.jpeg" alt="" loading="lazy" loading="lazy">
-                    </picture>
-
-                    <picture>
-                        <source srcset=" ./assets/images/webp/gallery8.webp"" type="image/webp">
-                        <source srcset=" ./assets/images/gallery8.jpeg"" type="image/jpeg">
-                        <img src="./assets/images/gallery8.jpeg" alt="" loading="lazy" loading="lazy">
-                    </picture>
-
-                    <picture>
-                        <source srcset=" ./assets/images/webp/gallery3.webp"" type="image/webp">
-                        <source srcset=" ./assets/images/gallery3.jpeg"" type="image/jpeg">
-                        <img src="./assets/images/gallery3.jpeg" alt="" loading="lazy" loading="lazy">
-                    </picture>
-
-                    <picture>
-                        <source srcset=" ./assets/images/webp/gallery11.webp"" type="image/webp">
-                        <source srcset=" ./assets/images/gallery11.jpeg"" type="image/jpeg">
-                        <img src="./assets/images/gallery11.jpeg" alt="" loading="lazy" loading="lazy">
-                    </picture>
+                    
+<picture>
+    <source srcset="src="./assets/images/webp/gallery1.webp"" type="image/webp">
+    <source srcset="src="./assets/images/gallery1.jpeg"" type="image/jpeg">
+    <img src="./assets/images/gallery1.jpeg" alt="" loading="lazy">
+</picture>
+                    
+<picture>
+    <source srcset="src="./assets/images/webp/gallery4.webp"" type="image/webp">
+    <source srcset="src="./assets/images/gallery4.jpeg"" type="image/jpeg">
+    <img src="./assets/images/gallery4.jpeg" alt="" loading="lazy">
+</picture>
+                    
+<picture>
+    <source srcset="src="./assets/images/webp/gallery5.webp"" type="image/webp">
+    <source srcset="src="./assets/images/gallery5.jpeg"" type="image/jpeg">
+    <img src="./assets/images/gallery5.jpeg" alt="" loading="lazy">
+</picture>
+                    
+<picture>
+    <source srcset="src="./assets/images/webp/gallery7.webp"" type="image/webp">
+    <source srcset="src="./assets/images/gallery7.jpeg"" type="image/jpeg">
+    <img src="./assets/images/gallery7.jpeg" alt="" loading="lazy">
+</picture>
+                    
+<picture>
+    <source srcset="src="./assets/images/webp/gallery6.webp"" type="image/webp">
+    <source srcset="src="./assets/images/gallery6.jpeg"" type="image/jpeg">
+    <img src="./assets/images/gallery6.jpeg" alt="" loading="lazy">
+</picture>
+                    
+<picture>
+    <source srcset="src="./assets/images/webp/gallery8.webp"" type="image/webp">
+    <source srcset="src="./assets/images/gallery8.jpeg"" type="image/jpeg">
+    <img src="./assets/images/gallery8.jpeg" alt="" loading="lazy">
+</picture>
+                    
+<picture>
+    <source srcset="src="./assets/images/webp/gallery3.webp"" type="image/webp">
+    <source srcset="src="./assets/images/gallery3.jpeg"" type="image/jpeg">
+    <img src="./assets/images/gallery3.jpeg" alt="" loading="lazy">
+</picture>
+                    
+<picture>
+    <source srcset="src="./assets/images/webp/gallery11.webp"" type="image/webp">
+    <source srcset="src="./assets/images/gallery11.jpeg"" type="image/jpeg">
+    <img src="./assets/images/gallery11.jpeg" alt="" loading="lazy">
+</picture>
                 </div>
             </div>
         </div>
     </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    <script src="./assets/javascript/jquery.min.js"></script>
+    <script src="./assets/javascript/magnific-popup.min.js"></script>
+    <script src="./assets/javascript/langage_circle.js"></script>
+    <script src="./assets/javascript/cursor.js"></script>
+    <script src="./assets/javascript/bootstrap.bundle.min.js"></script>
+    <script src="./assets/javascript/slick.min.js"></script>
+    <script src="./assets/javascript/hexagon_animation/particles.min.js"></script>
+    <script src="./assets/javascript/spider_animation/spider_animation.js"></script>
+    <script src="./assets/javascript/script.js"></script>
+    <script src="./assets/javascript/formulary.js"></script>
+    <script src="./assets/javascript/langage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    <!-- JS Bundle (optimisé) -->
-    <script src="./assets/js/bundle/app.min.js" defer></script>
-    
-    <!-- Service Worker Registration -->
-    <script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register('./sw.js')
-                .then(function(registration) {
-                    console.log('ServiceWorker registration successful');
-                })
-                .catch(function(err) {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-        });
-    }
-    </script>
-    </body>
+</body>
 
 </html>
