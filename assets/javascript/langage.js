@@ -1,4 +1,3 @@
-// langage.js - Version avec transitions intégrées
 document.addEventListener('DOMContentLoaded', () => {
     const style = document.createElement('style');
     style.textContent = `

@@ -1,4 +1,3 @@
-// install-dependencies.js
 const { execSync } = require('child_process');
 
 console.log('📦 Installation des dépendances d\'optimisation...\n');
