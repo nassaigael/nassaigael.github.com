@@ -257,3 +257,55 @@ window.addEventListener("load", () => {
 $(function () {
     $('.circlechart').circlechart();
 });
+
+
+// Synchronisation de l'état actif entre sidebar et sidenav
+function syncActiveTab() {
+    // Récupérer l'onglet actif du contenu principal
+    const activeTab = document.querySelector('.tabcontent.tab-active');
+    if (!activeTab) return;
+    
+    const activeId = activeTab.id;
+    
+    // Trouver l'onglet correspondant dans le sidebar (closed)
+    const sidebarTabs = document.querySelectorAll('#icetab-container .icetab');
+    const sidenavTabs = document.querySelectorAll('#icetab-container2 .icetab');
+    
+    // Retirer la classe current-tab de tous
+    sidebarTabs.forEach(tab => tab.classList.remove('current-tab'));
+    sidenavTabs.forEach(tab => tab.classList.remove('current-tab'));
+    
+    // Ajouter current-tab aux onglets correspondants
+    let targetIndex = -1;
+    
+    // Trouver l'index en fonction de l'ID
+    const tabContents = document.querySelectorAll('.tabcontent');
+    tabContents.forEach((tab, index) => {
+        if (tab.id === activeId) {
+            targetIndex = index;
+        }
+    });
+    
+    // Appliquer l'état actif si l'index est trouvé
+    if (targetIndex !== -1 && sidebarTabs[targetIndex]) {
+        sidebarTabs[targetIndex].classList.add('current-tab');
+    }
+    
+    if (targetIndex !== -1 && sidenavTabs[targetIndex]) {
+        sidenavTabs[targetIndex].classList.add('current-tab');
+    }
+}
+
+// Appeler la fonction au chargement
+document.addEventListener('DOMContentLoaded', syncActiveTab);
+
+// Mettre à jour l'état actif après chaque clic
+document.querySelectorAll('.icetab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Attendre un court instant pour que le contenu change
+        setTimeout(syncActiveTab, 50);
+    });
+});
+
+// Observer les changements d'URL (pour le scrolling avec ancres si présent)
+window.addEventListener('hashchange', syncActiveTab);
