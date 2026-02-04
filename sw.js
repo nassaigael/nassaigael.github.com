@@ -44,9 +44,7 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Fetch avec cache puis réseau
 self.addEventListener('fetch', event => {
-    // Ignorer les requêtes non-GET et certaines URLs
     if (event.request.method !== 'GET' || 
         event.request.url.includes('chrome-extension') ||
         event.request.url.includes('analytics')) {
@@ -62,7 +60,6 @@ self.addEventListener('fetch', event => {
                 
                 return fetch(event.request)
                     .then(response => {
-                        // Ne mettre en cache que les réponses valides
                         if (!response || response.status !== 200 || response.type !== 'basic') {
                             return response;
                         }
@@ -78,7 +75,6 @@ self.addEventListener('fetch', event => {
                     })
                     .catch(error => {
                         console.log('Fetch failed; returning offline page', error);
-                        // Vous pourriez retourner une page offline ici
                     });
             })
     );
