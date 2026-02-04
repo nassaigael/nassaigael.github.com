@@ -1,4 +1,3 @@
-// optimize-portfolio.js - SCRIPT PRINCIPAL
 const fs = require('fs-extra');
 const path = require('path');
 const { execSync } = require('child_process');
@@ -9,28 +8,20 @@ console.log('🚀 Début de l\'optimisation du portfolio...\n');
 
 async function optimizePortfolio() {
     try {
-        // 1. Créer la structure de dossiers
         await createFolderStructure();
         
-        // 2. Minifier et concaténer CSS
         await minifyAndBundleCSS();
         
-        // 3. Minifier JS
         await minifyJavaScript();
         
-        // 4. Optimiser les polices
         await optimizeFonts();
         
-        // 5. Créer Service Worker
         await createServiceWorker();
         
-        // 6. Mettre à jour le HTML
         await updateHTML();
         
-        // 7. Créer fichier .htaccess
         await createHTAccess();
         
-        // 8. Optimiser le preloader
         await optimizePreloader();
         
         console.log('\n✨✨✨ OPTIMISATION TERMINÉE AVEC SUCCÈS ! ✨✨✨');
@@ -71,7 +62,7 @@ async function createFolderStructure() {
         'assets/images/webp',
         'assets/images/original',
         'assets/images/svg/minified',
-        'sw'  // Service Worker
+        'sw' 
     ];
     
     for (const folder of folders) {
@@ -96,21 +87,17 @@ async function minifyAndBundleCSS() {
         if (await fs.pathExists(file)) {
             const content = await fs.readFile(file, 'utf8');
             
-            // Minifier
             const minified = minifyCSS(content).css;
             
-            // Sauvegarder version minifiée individuelle
             const minFileName = path.join('assets/css/minified', path.basename(file, '.css') + '.min.css');
             await fs.writeFile(minFileName, minified);
             
-            // Ajouter au bundle
             bundleContent += minified + '\n';
             
             console.log(`   ✅ ${path.basename(file)} → minifié`);
         }
     }
     
-    // Ajouter font-display: swap au bundle
     bundleContent += `
 /* Font display optimization */
 @font-face {
@@ -124,11 +111,9 @@ async function minifyAndBundleCSS() {
 }
 `;
     
-    // Sauvegarder le bundle
     await fs.writeFile('assets/css/bundle.min.css', bundleContent);
     console.log('   ✅ Bundle CSS créé: assets/css/bundle.min.css');
     
-    // Taille avant/après
     const originalSize = await getTotalSize(cssFiles);
     const minifiedSize = Buffer.byteLength(bundleContent, 'utf8');
     
@@ -156,7 +141,6 @@ async function minifyJavaScript() {
             totalOriginalSize += Buffer.byteLength(content, 'utf8');
             
             try {
-                // Minifier avec UglifyJS
                 const result = minifyJS(content, {
                     compress: {
                         drop_console: true,
@@ -178,7 +162,6 @@ async function minifyJavaScript() {
                     const minified = result.code;
                     totalMinifiedSize += Buffer.byteLength(minified, 'utf8');
                     
-                    // Sauvegarder version minifiée individuelle
                     const minFileName = path.join('assets/js/minified', path.basename(file, '.js') + '.min.js');
                     await fs.writeFile(minFileName, minified);
                     
@@ -192,7 +175,6 @@ async function minifyJavaScript() {
         }
     }
     
-    // Ajouter le lazy loading avancé
     const lazyLoadScript = `
 // Lazy loading avancé
 document.addEventListener('DOMContentLoaded', function() {
@@ -248,7 +230,6 @@ if (document.querySelector('.cursor')) {
     
     bundleContent += lazyLoadScript;
     
-    // Sauvegarder le bundle JS
     await fs.writeFile('assets/js/bundle/app.min.js', bundleContent);
     console.log('   ✅ Bundle JS créé: assets/js/bundle/app.min.js');
     
@@ -258,7 +239,6 @@ if (document.querySelector('.cursor')) {
 async function optimizeFonts() {
     console.log('\n🔤 Optimisation des polices...');
     
-    // Créer un fichier fonts.css optimisé
     const fontsCSS = `
 /* Kodchasan - Subset pour le français */
 @font-face {
@@ -386,13 +366,11 @@ async function updateHTML() {
     
     let html = await fs.readFile('index.html', 'utf8');
     
-    // 1. Remplacer les liens CSS par le bundle
     html = html.replace(
         /<link rel="stylesheet" href="\.\/assets\/css\/[^"]+"[^>]*>/g,
         ''
     );
     
-    // Ajouter le bundle CSS
     const cssBundleTag = `
     <!-- CSS Bundle (optimisé) -->
     <link rel="stylesheet" href="./assets/css/bundle.min.css">
@@ -400,7 +378,6 @@ async function updateHTML() {
     
     html = html.replace('</head>', cssBundleTag + '\n    </head>');
     
-    // 2. Remplacer les scripts JS par le bundle
     const scriptTagsToRemove = [
         'assets/javascript/jquery.min.js',
         'assets/javascript/magnific-popup.min.js',
@@ -420,7 +397,6 @@ async function updateHTML() {
         html = html.replace(regex, '');
     });
     
-    // Ajouter le bundle JS
     const jsBundleTag = `
     <!-- JS Bundle (optimisé) -->
     <script src="./assets/js/bundle/app.min.js" defer></script>
@@ -442,7 +418,6 @@ async function updateHTML() {
     
     html = html.replace('</body>', jsBundleTag + '\n    </body>');
     
-    // 3. Ajouter preload pour les polices critiques
     const preloadTags = `
     <!-- Preload critical fonts -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -450,16 +425,13 @@ async function updateHTML() {
     
     html = html.replace('</head>', preloadTags + '\n    </head>');
     
-    // 4. Ajouter lazy loading aux images qui n'en ont pas
     html = html.replace(/<img(?![^>]*loading=)([^>]*)>/g, '<img$1 loading="lazy">');
     
-    // 5. Convertir les iframes en lazy loading
     html = html.replace(
         /<iframe([^>]*)src="([^"]+)"([^>]*)>/g,
         '<iframe$1src="about:blank" data-src="$2"$3 loading="lazy">'
     );
     
-    // 6. Ajouter les meta tags de performance
     const metaTags = `
     <!-- Performance optimizations -->
     <meta http-equiv="Cache-Control" content="public, max-age=31536000">
@@ -583,7 +555,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 `;
     
-    // Lire le fichier JS bundle et ajouter l'optimisation
     const bundlePath = 'assets/js/bundle/app.min.js';
     if (await fs.pathExists(bundlePath)) {
         let bundleContent = await fs.readFile(bundlePath, 'utf8');
@@ -624,14 +595,11 @@ function formatBytes(bytes, decimals = 2) {
 // EXÉCUTION PRINCIPALE
 // ============================================
 
-// Vérifier les dépendances nécessaires
 try {
-    // Ces packages doivent être installés via npm
     require('csso');
     require('uglify-js');
     require('fs-extra');
     
-    // Démarrer l'optimisation
     optimizePortfolio();
     
 } catch (error) {
