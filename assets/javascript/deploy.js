@@ -1,4 +1,3 @@
-// deploy.js - Pour GitHub Pages
 const { execSync } = require('child_process');
 const fs = require('fs-extra');
 
@@ -6,11 +5,9 @@ console.log('🚀 Préparation du déploiement GitHub Pages...\n');
 
 async function prepareDeployment() {
     try {
-        // 1. Créer un dossier de déploiement
         const deployDir = 'deploy';
         await fs.emptyDir(deployDir);
         
-        // 2. Copier les fichiers nécessaires
         const filesToCopy = [
             'index.html',
             'assets/css/bundle.min.css',
@@ -21,7 +18,7 @@ async function prepareDeployment() {
             'assets/images/webp/',
             'assets/images/svg/',
             'assets/fonts/',
-            '404.html' // Créez une page 404 si nécessaire
+            '404.html'
         ];
         
         console.log('📦 Copie des fichiers optimisés...');
@@ -34,7 +31,6 @@ async function prepareDeployment() {
             }
         }
         
-        // 3. Créer un README pour GitHub Pages
         const readmeContent = `# Portfolio - Gaël RAMAHANDRISOA
         
 ## Site optimisé pour GitHub Pages
@@ -54,9 +50,7 @@ Ce site a été optimisé avec :
 Déployé automatiquement via GitHub Actions.`;
         
         await fs.writeFile(path.join(deployDir, 'README.md'), readmeContent);
-        
-        // 4. Créer CNAME si vous avez un domaine personnalisé
-        // await fs.writeFile(path.join(deployDir, 'CNAME'), 'votredomaine.com');
+
         
         console.log('\n✨ Préparation terminée !');
         console.log(`📁 Dossier de déploiement: ${deployDir}`);
@@ -66,11 +60,11 @@ Déployé automatiquement via GitHub Actions.`;
         console.log('3. git add .');
         console.log('4. git commit -m "Deploy optimized portfolio"');
         console.log('5. git branch -M gh-pages');
-        console.log('6. git remote add origin https://github.com/votre-username/votre-repo.git');
+        console.log('6. git remote add origin https://github.com/nassaigael/nassaigael.github.com.git');
         console.log('7. git push -u origin gh-pages');
         
         console.log('\n🌐 Votre site sera disponible sur :');
-        console.log('https://votre-username.github.io/votre-repo/');
+        console.log('https://nassaigael.github.io/nassaigael.github.com/');
         
     } catch (error) {
         console.error('❌ Erreur :', error.message);
