@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau Message de Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f7f9fc;
+            padding: 20px;
+        }
+        
+        .email-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Header */
+        .email-header {
+            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .email-header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .email-header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .header-icon {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        /* Section principale */
+        .email-content {
+            padding: 40px 30px;
+        }
+        
+        /* Section informations client */
+        .client-section {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 35px;
+            border-left: 4px solid #4361ee;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #2d3748;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .section-title i {
+            margin-right: 12px;
+            color: #4361ee;
+            font-size: 20px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+        }
+        
+        .info-label {
+            min-width: 100px;
+            color: #718096;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .info-value {
+            color: #2d3748;
+            font-weight: 500;
+        }
+        
+        .info-value a {
+            color: #4361ee;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .info-value a:hover {
+            color: #3a0ca3;
+            text-decoration: underline;
+        }
+        
+        /* Section message */
+        .message-section {
+            margin-bottom: 35px;
+        }
+        
+        .subject-card {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 3px solid #7209b7;
+        }
+        
+        .subject-label {
+            display: block;
+            color: #718096;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .message-card {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 8px;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            border: 1px solid #e2e8f0;
+        }
+        
+        /* Section actions */
+        .actions-section {
+            background: #f0f7ff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .actions-title {
+            color: #2d3748;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            min-width: 160px;
+        }
+        
+        .action-button i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .btn-email {
+            background-color: #4361ee;
+            color: white;
+        }
+        
+        .btn-email:hover {
+            background-color: #3a0ca3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(58, 12, 163, 0.2);
+        }
+        
+        .btn-call {
+            background-color: #4cc9f0;
+            color: white;
+        }
+        
+        .btn-call:hover {
+            background-color: #3aa8d0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 201, 240, 0.2);
+        }
+        
+        .btn-calendar {
+            background-color: #7209b7;
+            color: white;
+        }
+        
+        .btn-calendar:hover {
+            background-color: #5a0890;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(114, 9, 183, 0.2);
+        }
+        
+        /* Section métadonnées */
+        .meta-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            color: #718096;
+            font-size: 14px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .meta-item i {
+            margin-right: 8px;
+            color: #4361ee;
+        }
+        
+        /* Footer */
+        .email-footer {
+            background: #2d3748;
+            color: #cbd5e0;
+            padding: 30px;
+            text-align: center;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer-copyright {
+            font-size: 13px;
+            color: #a0aec0;
+            margin-top: 15px;
+            border-top: 1px solid #4a5568;
+            padding-top: 15px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            .email-header {
+                padding: 30px 20px;
+            }
+            
+            .email-header h1 {
+                font-size: 24px;
+            }
+            
+            .email-content {
+                padding: 30px 20px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .action-button {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .header-icon {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .email-header {
+                padding: 25px 15px;
+            }
+            
+            .email-content {
+                padding: 25px 15px;
+            }
+            
+            .client-section, .actions-section {
+                padding: 20px;
+            }
+            
+            .info-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .info-label {
+                margin-bottom: 5px;
+            }
+            
+            .meta-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        /* Styles pour les clients email */
+        .email-table {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .email-cell {
+            padding: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .email-cell {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .email-cell {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Version HTML pour les clients email -->
+    <table class="email-table" cellpadding="0" cellspacing="0" border="0" align="center">
+        <!-- Header -->
+        <tr>
+            <td class="email-cell" style="background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%); color: white; text-align: center; padding: 40px 30px;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td align="center">
+                            <!-- Icône Font Awesome -->
+                            <div style="font-size: 42px; margin-bottom: 20px; color: #fff;">
+                                <i class="fas fa-envelope-open-text"></i>
+                            </div>
+                            <h1 style="font-size: 28px; font-weight: 600; margin-bottom: 10px; color: white;">
+                                Nouveau Message de Contact
+                            </h1>
+                            <p style="font-size: 16px; opacity: 0.9;">
+                                Un visiteur a soumis un formulaire sur votre site
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <!-- Section informations client -->
+        <tr>
+            <td class="email-cell" style="padding: 40px 30px;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: #f8f9ff; border-radius: 10px; padding: 25px; margin-bottom: 30px; border-left: 4px solid #4361ee;">
+                    <tr>
+                        <td>
+                            <!-- Titre section -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 20px;">
+                                <tr>
+                                    <td style="color: #2d3748; font-size: 18px; font-weight: 600;">
+                                        <i class="fas fa-user-circle" style="color: #4361ee; margin-right: 10px;"></i>
+                                        Informations du Client
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Grille d'informations -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-bottom: 10px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td width="120" style="color: #718096; font-size: 14px; font-weight: 500; padding: 8px 0;">
+                                                    <i class="fas fa-user" style="margin-right: 8px; color: #4361ee;"></i> Nom :
+                                                </td>
+                                                <td style="color: #2d3748; font-weight: 500; padding: 8px 0;">
+                                                    {{from_name}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: #718096; font-size: 14px; font-weight: 500; padding: 8px 0;">
+                                                    <i class="fas fa-envelope" style="margin-right: 8px; color: #4361ee;"></i> Email :
+                                                </td>
+                                                <td style="padding: 8px 0;">
+                                                    <a href="mailto:{{from_email}}" style="color: #4361ee; text-decoration: none;">
+                                                        {{from_email}}
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: #718096; font-size: 14px; font-weight: 500; padding: 8px 0;">
+                                                    <i class="fas fa-phone" style="margin-right: 8px; color: #4361ee;"></i> Téléphone :
+                                                </td>
+                                                <td style="padding: 8px 0;">
+                                                    <a href="tel:{{phone}}" style="color: #4361ee; text-decoration: none;">
+                                                        {{phone}}
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                
+                <!-- Section sujet -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 25px;">
+                    <tr>
+                        <td style="background: #f8f9ff; padding: 20px; border-radius: 8px; border-left: 3px solid #7209b7;">
+                            <span style="color: #718096; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; display: block; margin-bottom: 8px;">
+                                <i class="fas fa-tag" style="margin-right: 8px;"></i> Sujet
+                            </span>
+                            <div style="color: #2d3748; font-size: 16px; font-weight: 500;">
+                                {{subject}}
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                
+                <!-- Section message -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 35px;">
+                    <tr>
+                        <td>
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 15px;">
+                                <tr>
+                                    <td style="color: #2d3748; font-size: 18px; font-weight: 600;">
+                                        <i class="fas fa-comment-alt" style="color: #4361ee; margin-right: 10px;"></i>
+                                        Message
+                                    </td>
+                                </tr>
+                            </table>
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="background: #f8f9ff; padding: 25px; border-radius: 8px; line-height: 1.7; border: 1px solid #e2e8f0; white-space: pre-wrap;">
+                                        {{project}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                
+                <!-- Section actions -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: #f0f7ff; border-radius: 10px; padding: 25px; margin-bottom: 30px; text-align: center;">
+                    <tr>
+                        <td>
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 20px;">
+                                <tr>
+                                    <td align="center" style="color: #2d3748; font-size: 18px; font-weight: 600;">
+                                        <i class="fas fa-bolt" style="margin-right: 10px; color: #4361ee;"></i>
+                                        Actions Rapides
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td align="center">
+                                        <!-- Boutons d'action -->
+                                        <table cellpadding="0" cellspacing="15" border="0" align="center" style="margin: 0 auto;">
+                                            <tr>
+                                                <td>
+                                                    <a href="mailto:{{from_email}}?subject=Re: {{subject}}" style="background-color: #4361ee; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 15px; display: inline-block; min-width: 160px; text-align: center;">
+                                                        <i class="fas fa-reply" style="margin-right: 8px;"></i> Répondre
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="tel:{{phone}}" style="background-color: #4cc9f0; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 15px; display: inline-block; min-width: 160px; text-align: center;">
+                                                        <i class="fas fa-phone" style="margin-right: 8px;"></i> Appeler
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="padding-top: 10px;">
+                                                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Réunion avec {{from_name}}&details=Contact: {{from_email}} - {{phone}}&dates={{meeting_date}}" style="background-color: #7209b7; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 15px; display: inline-block; min-width: 160px; text-align: center; margin-top: 10px;">
+                                                        <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i> Planifier
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                
+                <!-- Section métadonnées -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: #f8f9fa; border-radius: 8px; padding: 20px; text-align: center; border-top: 1px solid #e2e8f0;">
+                    <tr>
+                        <td style="color: #718096; font-size: 14px;">
+                            <i class="fas fa-info-circle" style="margin-right: 8px; color: #4361ee;"></i>
+                            Message envoyé via le formulaire de contact
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="margin-top: 10px;">
+                                <tr>
+                                    <td align="center">
+                                        <table cellpadding="0" cellspacing="20" border="0" style="margin: 0 auto;">
+                                            <tr>
+                                                <td style="color: #718096; font-size: 14px;">
+                                                    <i class="fas fa-calendar-day" style="margin-right: 8px; color: #4361ee;"></i>
+                                                    {{date}}
+                                                </td>
+                                                <td style="color: #718096; font-size: 14px;">
+                                                    <i class="fas fa-clock" style="margin-right: 8px; color: #4361ee;"></i>
+                                                    {{time}}
+                                                </td>
+                                                <td style="color: #718096; font-size: 14px;">
+                                                    <i class="fas fa-globe" style="margin-right: 8px; color: #4361ee;"></i>
+                                                    {{company_name}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <!-- Footer -->
+        <tr>
+            <td class="email-cell" style="background: #2d3748; color: #cbd5e0; padding: 30px; text-align: center; border-radius: 0 0 12px 12px;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td align="center">
+                            <div style="font-size: 24px; font-weight: 700; color: white; margin-bottom: 10px;">
+                                <i class="fas fa-cube" style="margin-right: 10px; color: #4361ee;"></i>
+                                {{company_name}}
+                            </div>
+                            <div style="font-size: 14px; margin-bottom: 15px; line-height: 1.5; max-width: 500px; margin-left: auto; margin-right: auto;">
+                                <i class="fas fa-exclamation-circle" style="margin-right: 8px;"></i>
+                                Ce message a été généré automatiquement depuis votre site web.
+                                Veuillez répondre dans les plus brefs délais.
+                            </div>
+                            <div style="font-size: 13px; color: #a0aec0; margin-top: 15px; border-top: 1px solid #4a5568; padding-top: 15px;">
+                                <i class="far fa-copyright" style="margin-right: 5px;"></i>
+                                {{current_year}} {{company_name}}. Tous droits réservés.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
