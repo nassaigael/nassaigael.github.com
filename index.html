@@ -20,6 +20,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 
+    <link rel="preload" href="./assets/css/bundle.min.css" as="style">
+    <link rel="preload" href="./assets/css/fonts.min.css" as="style">
+    <link rel="preload" href="./assets/js/bundle/app.min.js" as="script">
+
     <!-- CSS Bundle (optimisé) -->
     <link rel="stylesheet" href="./assets/css/bundle.min.css">
     <link rel="stylesheet" href="./assets/css/fonts.min.css">
@@ -855,9 +859,9 @@
                             </h4>
                         </div>
                     </div>
-                    <iframe src="about:blank"
+                    <iframe src="about:blank" loading="lazy"
                         data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.1836362832874!2d47.5135893!3d-18.8619098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21f081278e0f1921%3A0x7d62e74a2e5f0267!2sFJKM%20Isoavimasoandro%20Fihavaozana!5e0!3m2!1sfr!2smg!4v1680000000000!5m2!1sfr!2smg"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        width="600" height="450" style="border:0;" allowfullscreen=""
                         referrerpolicy="no-referrer-when-downgrade" title="Carte de localisation"
                         data-key-title="contact.alt.map" loading="lazy">
                     </iframe>
