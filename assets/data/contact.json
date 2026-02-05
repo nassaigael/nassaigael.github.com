@@ -1,0 +1,55 @@
+{
+  "FR": {
+    "section_title": "me contacter",
+    "main_title": "Travaillons ensemble !",
+    "form": {
+      "name": "Quel est votre nom*",
+      "email": "Votre email*",
+      "phone": "Votre numéro de téléphone*",
+      "subject": "Objet",
+      "project": "Décrivez votre projet",
+      "send": "Envoyer"
+    },
+    "contact_info": {
+      "title": "Prenez contact !",
+      "phone": "+261 38 96 821 94",
+      "email": "gael.ramahandrisoa@gmail.com",
+      "location": "Antananarivo, Madagascar"
+    },
+    "copyright": "© nassaigael 2026. Tous droits réservés by",
+    "author": "Gaël RAMAHANDRISOA",
+    "placeholders": {
+      "name": "Votre nom complet",
+      "email": "exemple@email.com",
+      "phone": "Votre numéro de téléphone",
+      "subject": "Objet de votre message",
+      "project": "Décrivez votre projet en détail..."
+    },
+    "alt": {
+      "phone": "Icône téléphone",
+      "email": "Icône email",
+      "location": "Icône localisation",
+      "map": "Carte de localisation"
+    }
+  },
+  "EN": {
+    "section_title": "Contact me",
+    "main_title": "Let's work together!",
+    "form": {
+      "name": "What is your name*",
+      "email": "Your email*",
+      "phone": "Your phone number*",
+      "subject": "Subject",
+      "project": "Describe your project",
+      "send": "Send"
+    },
+    "contact_info": {
+      "title": "Get in touch!",
+      "phone": "+261 38 96 821 94",
+      "email": "gael.ramahandrisoa@gmail.com",
+      "location": "Antananarivo, Madagascar"
+    },
+    "copyright": "© nassaigael 2026. All rights reserved by",
+    "author": "Gaël RAMAHANDRISOA"
+  }
+}

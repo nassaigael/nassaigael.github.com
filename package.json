@@ -1,0 +1,45 @@
+{
+  "name": "nassai-portfolio-optimizer",
+  "version": "1.0.0",
+  "description": "Optimisation automatique du portfolio pour GitHub Pages",
+  "keywords": [
+    "optimization",
+    "portfolio",
+    "github-pages",
+    "performance"
+  ],
+  "homepage": "https://github.com/nassaigael/nassaigael.github.com#readme",
+  "bugs": {
+    "url": "https://github.com/nassaigael/nassaigael.github.com/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nassaigael/nassaigael.github.com.git"
+  },
+  "license": "MIT",
+  "author": "Gaël RAMAHANDRISOA",
+  "type": "commonjs",
+  "main": "optimize-portfolio.js",
+  "scripts": {
+    "install-deps": "node install-dependencies.js",
+    "optimize": "node optimize-portfolio.js",
+    "benchmark": "node benchmark.js",
+    "deploy": "node deploy.js",
+    "full-optimize": "npm run install-deps && npm run optimize && npm run benchmark",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "detect-libc": "^2.1.2",
+    "semver": "^7.7.3",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "csso": "^5.0.5",
+    "fs-extra": "^11.1.1",
+    "imagemin": "^9.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-webp": "^8.0.0",
+    "uglify-js": "^3.17.4"
+  }
+}

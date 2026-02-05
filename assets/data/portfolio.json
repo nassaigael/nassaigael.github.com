@@ -1,0 +1,58 @@
+{
+  "FR": {
+    "section_title": "portfolio",
+    "main_title": "Code expert, projet performant.",
+    "description": "Je transforme vos idées en solutions web performantes, en combinant expertise technique et approche centrée sur l’utilisateur.",
+    "projects": [
+      {
+        "name": "Ecrivia",
+        "type": "Full-Stack web",
+        "description": "Ecrivia - Full-Stack web",
+        "link": "https://ecrivia.onrender.com"
+      },
+      {
+        "name": "Planifieo",
+        "type": "Web application",
+        "description": "Planifieo - Web application"
+      },
+      {
+        "name": "Vision Générative",
+        "type": "galerie",
+        "description": "Vision Générative - galerie"
+      },
+      {
+        "name": "FIZANAKARA COTISATION",
+        "type": "Backend",
+        "description": "FIZANAKARA COTISATION - Backend"
+      }
+    ]
+  },
+  "EN": {
+    "section_title": "Portfolio",
+    "main_title": "Expert code, high-performance project.",
+    "description": "I transform your ideas into high-performance web solutions, combining technical expertise and user-centered approach.",
+    "projects": [
+      {
+        "name": "Ecrivia",
+        "type": "Full-Stack web",
+        "description": "Ecrivia - Full-Stack web",
+        "link": "https://ecrivia.onrender.com"
+      },
+      {
+        "name": "Planifieo",
+        "type": "Web application",
+        "description": "Planifieo - Web application"
+      },
+      {
+        "name": "Generative Vision",
+        "type": "gallery",
+        "description": "Generative Vision - gallery"
+      },
+      {
+        "name": "FIZANAKARA COTISATION",
+        "type": "Backend",
+        "description": "FIZANAKARA COTISATION - Backend"
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "FR": {
+    "section_title": "Parcours professionnel",
+    "education": {
+      "title": "Formation",
+      "description": "Passionné par les technologies numériques et l'intelligence artificielle, je poursuis actuellement un cursus en informatique. Voici le détail de mon parcours académique"
+    },
+    "experience": {
+      "title": "Expérience",
+      "description": "À travers différents projets académiques et personnels, j'ai pu mettre en pratique mes compétences techniques et développer des solutions concrètes."
+    },
+    "degrees": [
+      {
+        "title": "Licence 2 en Informatique – Tronc commun",
+        "school": "Haute École Informatique (HEI) / Actuellement",
+        "description": "Je poursuis actuellement une licence en informatique avec une spécialisation en IA, bases de données et génie logiciel, en réalisant des projets techniques approfondis."
+      },
+      {
+        "title": "Sciences et Technologies du Numérique",
+        "school": "Passerelles Numériques Madagascar (PNM) / 2024",
+        "description": "Une formation axée sur la pratique et la rigueur du développement logiciel, renforcée par une pédagogie collaborative et une culture exigeante de la qualité."
+      },
+      {
+        "title": "Baccalauréat général — Série OSE",
+        "school": "Lycée VOHIPENO (LVP) / 2021 - 2022",
+        "description": "Cursus centré sur les mathématiques appliquées, l'économie et la géographie, développant une analyse rigoureuse des phénomènes socio-économiques et une solide culture générale."
+      }
+    ],
+    "jobs": [
+      {
+        "title": "Développeur bénévole",
+        "company": "Association FIZANAKARA / Actuellement",
+        "description": "Mon rôle consiste à faire évoluer le site web de l'association et à imaginer des applications pratiques (web/mobile) pour fluidifier ses opérations et renforcer son impact."
+      }
+    ]
+  },
+  "EN": {
+    "section_title": "Professional Background",
+    "education": {
+      "title": "Education",
+      "description": "Passionate about digital technologies and artificial intelligence, I'm currently pursuing studies in computer science. Here's the detail of my academic path"
+    },
+    "experience": {
+      "title": "Experience",
+      "description": "Through various academic and personal projects, I was able to put my technical skills into practice and develop concrete solutions."
+    },
+    "degrees": [
+      {
+        "title": "Bachelor 2 in Computer Science – Common core",
+        "school": "Haute École Informatique (HEI) / Currently",
+        "description": "I'm currently pursuing a degree in computer science with specialization in AI, databases and software engineering, while completing in-depth technical projects."
+      },
+      {
+        "title": "Digital Sciences and Technologies",
+        "school": "Passerelles Numériques Madagascar (PNM) / 2024",
+        "description": "Training focused on practice and rigor of software development, reinforced by collaborative pedagogy and a demanding quality culture."
+      },
+      {
+        "title": "General Baccalaureate — OSE series",
+        "school": "Lycée VOHIPENO (LVP) / 2021 - 2022",
+        "description": "Curriculum focused on applied mathematics, economics and geography, developing rigorous analysis of socio-economic phenomena and a solid general culture."
+      }
+    ],
+    "jobs": [
+      {
+        "title": "Volunteer Developer",
+        "company": "Association FIZANAKARA / Currently",
+        "description": "My role involves evolving the association's website and imagining practical applications (web/mobile) to streamline its operations and strengthen its impact."
+      }
+    ]
+  }
+}
