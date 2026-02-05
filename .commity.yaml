@@ -61,7 +61,7 @@ commitMessagePrompt: |
   - Security considerations
   - Backward compatibility
   - Migration requirements
-  - Testing coverage
+  - Testing coverage 
   
   Writing Rules:
   - Subject: Imperative mood, max 50 characters
